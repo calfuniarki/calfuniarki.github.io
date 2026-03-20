@@ -108,7 +108,7 @@ ul { list-style: none }
   .nav-links {
     position:fixed; top:0; right:0; width:min(300px,80vw); height:100vh;
     background:var(--bg-light); flex-direction:column; justify-content:center;
-    gap:2rem; padding:2rem;
+    gap:2rem; padding:2rem; z-index:210;
     transform:translateX(100%); transition:transform .4s var(--ease-out);
     border-left:1px solid var(--border);
     z-index:205;
@@ -118,7 +118,7 @@ ul { list-style: none }
   .nav-links a::after { display:none }
   .nav-overlay {
     position:fixed; inset:0; background:rgba(0,0,0,.5);
-    opacity:0; pointer-events:none; transition:opacity .3s; z-index:190;
+    opacity:0; pointer-events:none; transition:opacity .3s; z-index:200;
   }
   .nav-overlay.open { opacity:1; pointer-events:auto }
 }
@@ -514,4 +514,4 @@ body.js-ready .reveal.delay-4 { transition-delay:.4s }
 #particles {
   position:fixed; inset:0; z-index:0; pointer-events:none; opacity:.4;
 }
-main, .site-header, .site-footer { position:relative; z-index:1 }
+main, .site-footer { position:relative; z-index:1 }
