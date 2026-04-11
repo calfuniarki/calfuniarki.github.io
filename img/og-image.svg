@@ -1,0 +1,25 @@
+<svg width="100%" viewBox="0 0 680 367" xmlns="http://www.w3.org/2000/svg"><defs><mask id="imagine-text-gaps-absr2s" maskUnits="userSpaceOnUse"><rect x="0" y="0" width="680" height="367" fill="white"/><rect x="123.99147033691406" y="212.5384979248047" width="432.0170593261719" height="63.13237762451172" fill="black" rx="2"/><rect x="253.22805786132812" y="291.6607971191406" width="173.5438995361328" height="24.229496002197266" fill="black" rx="2"/><rect x="213.9118194580078" y="324.3291320800781" width="252.1763458251953" height="18.78309440612793" fill="black" rx="2"/></mask></defs>
+  
+
+  <!-- Cielo patagónico — capas planas de azul -->
+  <rect width="680" height="357" fill="#0a1628" style="fill:rgb(10, 22, 40);stroke:none;color:rgb(255, 255, 255);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+  <rect width="680" height="200" fill="#0d1e38" style="fill:rgb(13, 30, 56);stroke:none;color:rgb(255, 255, 255);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+  <rect width="680" height="120" fill="#112444" style="fill:rgb(17, 36, 68);stroke:none;color:rgb(255, 255, 255);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+
+  <!-- Montañas estilizadas — silueta mínima -->
+  <polygon points="0,220 80,140 160,200 240,120 340,170 420,100 500,160 580,110 680,155 680,357 0,357" fill="#0a1628" style="fill:rgb(10, 22, 40);stroke:none;color:rgb(255, 255, 255);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+  <polygon points="0,250 60,200 130,230 200,180 300,210 380,165 460,200 540,170 620,195 680,175 680,357 0,357" fill="#080f1e" style="fill:rgb(8, 15, 30);stroke:none;color:rgb(255, 255, 255);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+
+  <!-- Líneas decorativas sutiles -->
+  <line x1="120" y1="290" x2="560" y2="290" style="fill:rgb(0, 0, 0);stroke:rgb(58, 110, 154);color:rgb(255, 255, 255);stroke-width:0.5px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+  <line x1="120" y1="294" x2="560" y2="294" stroke-opacity="0.4" mask="url(#imagine-text-gaps-absr2s)" style="fill:rgb(0, 0, 0);stroke:rgb(58, 110, 154);color:rgb(255, 255, 255);stroke-width:0.5px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+
+  <!-- Nombre principal -->
+  <text x="340" y="262" text-anchor="middle" style="fill:rgb(240, 246, 255);stroke:none;color:rgb(255, 255, 255);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:Georgia, serif;font-size:52px;font-weight:400;text-anchor:middle;dominant-baseline:auto">CALFUNIARKI</text>
+
+  <!-- Tagline -->
+  <text x="340" y="310" text-anchor="middle" style="fill:rgb(168, 200, 232);stroke:none;color:rgb(255, 255, 255);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:Georgia, serif;font-size:18px;font-weight:400;text-anchor:middle;dominant-baseline:auto">Crear es creer</text>
+
+  <!-- Subtítulo -->
+  <text x="340" y="338" text-anchor="middle" style="fill:rgb(104, 153, 184);stroke:none;color:rgb(255, 255, 255);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:Georgia, serif;font-size:13px;font-weight:400;text-anchor:middle;dominant-baseline:auto">El Bolsón · Patagonia Argentina</text>
+</svg>
