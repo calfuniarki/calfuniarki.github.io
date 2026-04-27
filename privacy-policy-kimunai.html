@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KimunAI — Politica de Privacidad</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Inter', sans-serif;
+            line-height: 1.7;
+            color: #1d1d1f;
+            background: #fff;
+            padding: 40px 20px;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        h1 { font-size: 28px; font-weight: 700; margin-bottom: 8px; }
+        h2 { font-size: 20px; font-weight: 600; margin-top: 32px; margin-bottom: 12px; color: #007AFF; }
+        p, li { font-size: 15px; margin-bottom: 12px; color: #333; }
+        ul { padding-left: 24px; margin-bottom: 16px; }
+        li { margin-bottom: 6px; }
+        .updated { font-size: 13px; color: #86868b; margin-bottom: 32px; }
+        .contact { background: #f5f5f7; padding: 20px; border-radius: 12px; margin-top: 32px; }
+        .contact p { margin-bottom: 4px; }
+        a { color: #007AFF; text-decoration: none; }
+        a:hover { text-decoration: underline; }
+    </style>
+</head>
+<body>
+
+<h1>Politica de Privacidad</h1>
+<p class="updated">Ultima actualizacion: 8 de marzo de 2026</p>
+
+<p>Esta politica de privacidad describe como <strong>KimunAI</strong> ("la App", "nosotros") recopila, usa y protege la informacion del usuario. Al utilizar KimunAI, aceptas las practicas descritas en esta politica.</p>
+
+<h2>1. Datos almacenados localmente</h2>
+<p>KimunAI almacena todos tus datos de forma <strong>local en tu dispositivo</strong>. Esto incluye:</p>
+<ul>
+    <li>El contenido de tus notas (titulo, texto, formato)</li>
+    <li>Configuraciones de la aplicacion (tema, tamano de fuente, carpetas)</li>
+    <li>Estado de la suscripcion Premium</li>
+    <li>Claves de API ingresadas por el usuario</li>
+    <li>Contadores de uso de funciones de IA</li>
+</ul>
+<p><strong>No mantenemos servidores propios</strong> y no almacenamos tus notas ni datos personales en la nube. Toda la informacion permanece en tu dispositivo y bajo tu control.</p>
+
+<h2>2. Servicios de inteligencia artificial</h2>
+<p>KimunAI ofrece funciones de IA (resumir, corregir, expandir, traducir, etc.) que requieren el envio de texto a proveedores externos de IA. Los proveedores soportados son:</p>
+<ul>
+    <li><strong>Google Gemini</strong> (Google LLC) — <a href="https://ai.google.dev/terms" target="_blank">Terminos de servicio</a></li>
+    <li><strong>DeepSeek</strong> (DeepSeek AI) — <a href="https://platform.deepseek.com/terms" target="_blank">Terminos de servicio</a></li>
+    <li><strong>Claude</strong> (Anthropic PBC) — <a href="https://www.anthropic.com/policies" target="_blank">Politica de uso</a></li>
+</ul>
+<p>Cuando utilizas una funcion de IA:</p>
+<ul>
+    <li>El contenido de texto de tu nota se envia al proveedor de IA que hayas seleccionado en Configuracion.</li>
+    <li>La comunicacion se realiza mediante conexiones HTTPS cifradas.</li>
+    <li>La API key que proporcionas se usa exclusivamente para autenticar la solicitud y se almacena localmente en tu dispositivo.</li>
+    <li>No enviamos datos adicionales como tu nombre, correo electronico ni identificadores del dispositivo.</li>
+    <li>Cada proveedor tiene su propia politica de privacidad respecto al manejo de los datos que recibe. Te recomendamos revisarlas.</li>
+</ul>
+<p><strong>Las funciones de IA son opcionales.</strong> Si no configuras una API key, ningun dato se envia a servicios externos.</p>
+
+<h2>3. Publicidad (Google AdMob)</h2>
+<p>La version gratuita de KimunAI muestra anuncios proporcionados por <strong>Google AdMob</strong> (Google LLC). AdMob puede recopilar cierta informacion para personalizar anuncios, incluyendo:</p>
+<ul>
+    <li>Identificadores publicitarios del dispositivo</li>
+    <li>Informacion general del dispositivo (modelo, sistema operativo)</li>
+    <li>Direccion IP (para localizacion aproximada)</li>
+</ul>
+<p>Para mas informacion, consulta la <a href="https://policies.google.com/privacy" target="_blank">Politica de Privacidad de Google</a>.</p>
+<p>Los usuarios Premium no ven publicidad y AdMob no recopila datos en su caso.</p>
+
+<h2>4. Compras dentro de la aplicacion</h2>
+<p>KimunAI ofrece una compra unica de "Premium" a traves de <strong>Google Play Billing</strong>. La transaccion es gestionada completamente por Google Play. No tenemos acceso a tu informacion de pago (tarjeta de credito, datos bancarios, etc.).</p>
+
+<h2>5. Autenticacion biometrica</h2>
+<p>KimunAI permite bloquear notas individuales con autenticacion biometrica o PIN del dispositivo. Esta funcionalidad utiliza las APIs nativas del sistema operativo (<code>local_auth</code>). Los datos biometricos <strong>nunca salen de tu dispositivo</strong> y no son accesibles para la aplicacion.</p>
+
+<h2>6. Datos que NO recopilamos</h2>
+<p>KimunAI <strong>no recopila</strong>:</p>
+<ul>
+    <li>Nombre, correo electronico ni informacion personal identificable</li>
+    <li>Ubicacion precisa del usuario</li>
+    <li>Contactos, fotos ni archivos del dispositivo</li>
+    <li>Historial de navegacion</li>
+    <li>Datos de uso anonimizados ni telemetria</li>
+</ul>
+
+<h2>7. Seguridad</h2>
+<p>Implementamos las siguientes medidas de seguridad:</p>
+<ul>
+    <li>Almacenamiento local cifrado mediante las APIs del sistema operativo</li>
+    <li>Comunicaciones con servicios de IA mediante HTTPS/TLS</li>
+    <li>Claves de API almacenadas en SharedPreferences del dispositivo</li>
+    <li>Autenticacion biometrica gestionada por el sistema operativo</li>
+</ul>
+
+<h2>8. Menores de edad</h2>
+<p>KimunAI no esta dirigida a menores de 13 anos. No recopilamos intencionalmente informacion de menores de edad. Si eres padre o tutor y crees que tu hijo ha proporcionado datos personales, contactanos para que podamos tomar las medidas necesarias.</p>
+
+<h2>9. Cambios en esta politica</h2>
+<p>Podemos actualizar esta politica de privacidad periodicamente. Te notificaremos de cambios significativos a traves de una actualizacion de la aplicacion. La fecha de "ultima actualizacion" en la parte superior indica cuando se modifico por ultima vez.</p>
+
+<h2>10. Contacto</h2>
+<div class="contact">
+    <p><strong>KimunAI</strong></p>
+    <p>Desarrollador: Nacer</p>
+    <p>Email: <a href="mailto:contacto@kimunai.com">contacto@kimunai.com</a></p>
+</div>
+
+</body>
+</html>
