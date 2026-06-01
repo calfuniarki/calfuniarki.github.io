@@ -22,15 +22,26 @@
       background: none;
       border: none;
       cursor: pointer;
-      font-size: 1.25rem;
-      padding: .2rem .3rem;
+      font-size: .8rem;
+      font-family: var(--sans);
+      font-weight: 400;
+      font-style: italic;
+      padding: .2rem .4rem;
       border-radius: 6px;
-      opacity: .4;
-      transition: opacity .25s, transform .2s;
+      color: var(--text-dim);
+      opacity: .5;
+      transition: opacity .25s, color .25s, transform .2s;
       line-height: 1;
+      letter-spacing: .05em;
     }
-    .lang-btn:hover { opacity: .75; transform: scale(1.1); }
-    .lang-btn.active { opacity: 1; transform: scale(1.15); }
+    .lang-btn:hover { opacity: .8; }
+    .lang-btn.active {
+      opacity: 1;
+      font-weight: 700;
+      font-style: normal;
+      color: var(--white);
+      transform: none;
+    }
 
     /* === EDICIONES === */
     .ediciones-grid {
@@ -172,8 +183,8 @@
       <a href="../docencia/index.html" data-es="Docencia" data-en="Teaching">Docencia</a>
       <a href="../comunidad/index.html" data-es="Comunidad" data-en="Community">Comunidad</a>
       <div class="lang-switcher">
-        <button class="lang-btn active" data-lang="es" title="Español">🇦🇷</button>
-        <button class="lang-btn" data-lang="en" title="English">🇺🇸</button>
+        <button class="lang-btn active" data-lang="es" title="Español">ES</button>
+        <button class="lang-btn" data-lang="en" title="English">EN</button>
       </div>
     </nav>
   </div>
