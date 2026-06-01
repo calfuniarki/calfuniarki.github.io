@@ -11,17 +11,28 @@
   <meta property="og:type" content="website">
   <link rel="stylesheet" href="../styles.css">
   <style>
-    .edicion-tag {
-      display: inline-block;
-      font-size: .72rem; font-weight: 600;
-      text-transform: uppercase; letter-spacing: 1.5px;
-      color: var(--gold); background: var(--gold-soft);
-      border: 1px solid rgba(200,164,92,.2);
-      border-radius: 20px; padding: .25rem .75rem;
-      margin-top: .75rem;
+    /* === LANGUAGE SWITCHER === */
+    .lang-switcher {
+      display: flex;
+      align-items: center;
+      gap: .35rem;
+      margin-left: .5rem;
     }
+    .lang-btn {
+      background: none;
+      border: none;
+      cursor: pointer;
+      font-size: 1.25rem;
+      padding: .2rem .3rem;
+      border-radius: 6px;
+      opacity: .4;
+      transition: opacity .25s, transform .2s;
+      line-height: 1;
+    }
+    .lang-btn:hover { opacity: .75; transform: scale(1.1); }
+    .lang-btn.active { opacity: 1; transform: scale(1.15); }
 
-    /* Galería de ediciones */
+    /* === EDICIONES === */
     .ediciones-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
@@ -45,9 +56,7 @@
       object-fit: cover;
       display: block;
     }
-    .edicion-card-body {
-      padding: 1rem 1.1rem 1.25rem;
-    }
+    .edicion-card-body { padding: 1rem 1.1rem 1.25rem; }
     .edicion-year {
       font-family: var(--serif);
       font-size: 1.4rem; font-weight: 700;
@@ -61,11 +70,20 @@
       font-size: .82rem; color: var(--text-dim);
       line-height: 1.55; margin: 0;
     }
+    .edicion-tag {
+      display: inline-block;
+      font-size: .72rem; font-weight: 600;
+      text-transform: uppercase; letter-spacing: 1.5px;
+      color: var(--gold); background: var(--gold-soft);
+      border: 1px solid rgba(200,164,92,.2);
+      border-radius: 20px; padding: .25rem .75rem;
+      margin-top: .75rem;
+    }
 
-    /* Galería de láminas */
+    /* === LÁMINAS === */
     .laminas-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
       gap: 1rem;
       margin: 2rem 0;
     }
@@ -86,9 +104,7 @@
       object-fit: cover;
       display: block;
     }
-    .lamina-card-body {
-      padding: .75rem 1rem .9rem;
-    }
+    .lamina-card-body { padding: .75rem 1rem .9rem; }
     .lamina-num {
       font-size: .72rem; font-weight: 600;
       color: var(--gold); letter-spacing: .1em;
@@ -104,13 +120,13 @@
       font-style: italic; margin: 0;
     }
 
+    /* === NOTA GRAFEMARIO === */
     .nota-grafemario {
       background: var(--surface);
       border: 1px solid var(--border);
       border-left: 3px solid var(--gold);
       border-radius: 0 12px 12px 0;
-      padding: 1.5rem;
-      margin: 2rem 0;
+      padding: 1.5rem; margin: 2rem 0;
     }
     .nota-grafemario .nota-label {
       font-size: .72rem; text-transform: uppercase;
@@ -123,6 +139,7 @@
     }
     .nota-grafemario p:last-child { margin-bottom: 0; }
 
+    /* === BRIDGE AMUTUY === */
     .bridge-amutuy {
       background: linear-gradient(160deg, rgba(200,164,92,.08), rgba(200,164,92,.03));
       border: 1px solid var(--border-h);
@@ -148,66 +165,89 @@
       <span></span><span></span><span></span>
     </button>
     <nav class="nav-links">
-      <a href="../arte/index.html">Arte Inmersivo</a>
-      <a href="../calendario-sur/index.html" class="active">Calendario Sur</a>
-      <a href="../investigacion/index.html">Investigación</a>
-      <a href="../apps/index.html">Apps</a>
-      <a href="../docencia/index.html">Docencia</a>
-      <a href="../comunidad/index.html">Comunidad</a>
+      <a href="../arte/index.html" data-es="Arte Inmersivo" data-en="Immersive Art">Arte Inmersivo</a>
+      <a href="../calendario-sur/index.html" class="active" data-es="Calendario Sur" data-en="Southern Calendar">Calendario Sur</a>
+      <a href="../investigacion/index.html" data-es="Investigación" data-en="Research">Investigación</a>
+      <a href="../apps/index.html" data-es="Apps" data-en="Apps">Apps</a>
+      <a href="../docencia/index.html" data-es="Docencia" data-en="Teaching">Docencia</a>
+      <a href="../comunidad/index.html" data-es="Comunidad" data-en="Community">Comunidad</a>
+      <div class="lang-switcher">
+        <button class="lang-btn active" data-lang="es" title="Español">🇦🇷</button>
+        <button class="lang-btn" data-lang="en" title="English">🇺🇸</button>
+      </div>
     </nav>
   </div>
 </header>
 
 <main>
 
-  <!-- PAGE HERO con imagen de portada -->
+  <!-- PAGE HERO -->
   <div class="page-hero">
     <div class="container">
-      <p class="section-label reveal">Serie artística · 2005–presente</p>
-      <h1 class="reveal delay-1">Calendario Sur</h1>
-      <p class="tagline reveal delay-2">Trece lunas para el hemisferio sur</p>
+      <p class="section-label reveal" data-es="Serie artística · 2005–presente" data-en="Artistic series · 2005–present">Serie artística · 2005–presente</p>
+      <h1 class="reveal delay-1" data-es="Calendario Sur" data-en="Southern Calendar">Calendario Sur</h1>
+      <p class="tagline reveal delay-2" data-es="Trece lunas para el hemisferio sur" data-en="Thirteen moons for the southern hemisphere">Trece lunas para el hemisferio sur</p>
     </div>
   </div>
 
   <!-- SECCIÓN 1: ORIGEN -->
   <section class="section">
     <div class="container">
-      <p class="section-label reveal">I — Origen y trayectoria</p>
-      <h2 class="section-title reveal">Una colaboración que nació del territorio</h2>
+      <p class="section-label reveal" data-es="I — Origen y trayectoria" data-en="I — Origin and trajectory">I — Origen y trayectoria</p>
+      <h2 class="section-title reveal" data-es="Una colaboración que nació del territorio" data-en="A collaboration born from the land">Una colaboración que nació del territorio</h2>
 
       <div class="highlight-box reveal">
-        <p>"Este es un aporte para pensar un calendario propio para el hemisferio sur. Para los seres que aquí habitamos y buscamos una relación más armónica con nuestro entorno. Una forma simple de autoafirmación."</p>
+        <p data-es='"Este es un aporte para pensar un calendario propio para el hemisferio sur. Para los seres que aquí habitamos y buscamos una relación más armónica con nuestro entorno. Una forma simple de autoafirmación."'
+           data-en='"This is a contribution toward imagining a calendar of our own for the southern hemisphere. For those of us who live here and seek a more harmonious relationship with our surroundings. A simple act of self-affirmation."'>
+          "Este es un aporte para pensar un calendario propio para el hemisferio sur. Para los seres que aquí habitamos y buscamos una relación más armónica con nuestro entorno. Una forma simple de autoafirmación."
+        </p>
       </div>
 
-      <p class="reveal">El Calendario Sur nace en 2005 de la colaboración entre <strong style="color:var(--text-bright)">Germán Burgos</strong> y <strong style="color:var(--text-bright)">Lucas Curapil</strong>, peñí mapuche de Bariloche e integrante del Centro de Educación Mapuche "Quimel Tuhun Mapuche Zungun". Lucas aportaba el conocimiento profundo de la cosmovisión mapuche; Germán la visión artística y conceptual. Juntos crearon el Calendario Mapuche Quimün — Conocimiento de la Gente de la Tierra.</p>
-      <p class="reveal">Con el tiempo surge una pregunta más ambiciosa: ¿cómo hacer un calendario que no sea utilitario, sino una herramienta de reconexión? Un calendario anclado en el territorio, en los ciclos reales del hemisferio sur, que devuelva a la gente la capacidad de leer la naturaleza.</p>
-      <p class="reveal">Cuando Lucas se retira del proyecto con respeto mutuo, Germán continúa bajo la marca <strong style="color:var(--text-bright)">Calendario Sur</strong> — reforzando la idea de un calendario específico para el hemisferio sur. Es un gesto de honestidad: habitar la propia complejidad genealógica mientras se sostiene un trabajo de resistencia epistémica.</p>
+      <p class="reveal"
+         data-es="El Calendario Sur nace en 2005 de la colaboración entre <strong style='color:var(--text-bright)'>Germán Burgos</strong> y <strong style='color:var(--text-bright)'>Lucas Curapil</strong>, peñí mapuche de Bariloche e integrante del Centro de Educación Mapuche "Quimel Tuhun Mapuche Zungun". Lucas aportaba el conocimiento profundo de la cosmovisión mapuche; Germán la visión artística y conceptual. Juntos crearon el Calendario Mapuche Quimün — Conocimiento de la Gente de la Tierra."
+         data-en="The Southern Calendar was born in 2005 from a collaboration between <strong style='color:var(--text-bright)'>Germán Burgos</strong> and <strong style='color:var(--text-bright)'>Lucas Curapil</strong>, a Mapuche peñí from Bariloche and member of the Mapuche Education Center "Quimel Tuhun Mapuche Zungun". Lucas brought deep knowledge of Mapuche cosmovision; Germán the artistic and conceptual vision. Together they created the Mapuche Quimün Calendar — Knowledge of the People of the Earth.">
+        El Calendario Sur nace en 2005 de la colaboración entre <strong style="color:var(--text-bright)">Germán Burgos</strong> y <strong style="color:var(--text-bright)">Lucas Curapil</strong>, peñí mapuche de Bariloche e integrante del Centro de Educación Mapuche "Quimel Tuhun Mapuche Zungun". Lucas aportaba el conocimiento profundo de la cosmovisión mapuche; Germán la visión artística y conceptual. Juntos crearon el Calendario Mapuche Quimün — Conocimiento de la Gente de la Tierra.
+      </p>
+      <p class="reveal"
+         data-es="Con el tiempo surge una pregunta más ambiciosa: ¿cómo hacer un calendario que no sea utilitario, sino una herramienta de reconexión? Un calendario anclado en el territorio, en los ciclos reales del hemisferio sur, que devuelva a la gente la capacidad de leer la naturaleza."
+         data-en="Over time, a more ambitious question emerged: how to create a calendar that is not merely utilitarian, but a tool for reconnection? A calendar anchored in the land, in the real cycles of the southern hemisphere, that returns to people the ability to read nature.">
+        Con el tiempo surge una pregunta más ambiciosa: ¿cómo hacer un calendario que no sea utilitario, sino una herramienta de reconexión? Un calendario anclado en el territorio, en los ciclos reales del hemisferio sur, que devuelva a la gente la capacidad de leer la naturaleza.
+      </p>
+      <p class="reveal"
+         data-es="Cuando Lucas se retira del proyecto con respeto mutuo, Germán continúa bajo la marca <strong style='color:var(--text-bright)'>Calendario Sur</strong> — reforzando la idea de un calendario específico para el hemisferio sur. Es un gesto de honestidad: habitar la propia complejidad genealógica mientras se sostiene un trabajo de resistencia epistémica."
+         data-en="When Lucas stepped away from the project with mutual respect, Germán continued under the name <strong style='color:var(--text-bright)'>Calendario Sur</strong> — reinforcing the idea of a calendar specific to the southern hemisphere. It is a gesture of honesty: inhabiting one's own genealogical complexity while sustaining a work of epistemic resistance.">
+        Cuando Lucas se retira del proyecto con respeto mutuo, Germán continúa bajo la marca <strong style="color:var(--text-bright)">Calendario Sur</strong> — reforzando la idea de un calendario específico para el hemisferio sur. Es un gesto de honestidad: habitar la propia complejidad genealógica mientras se sostiene un trabajo de resistencia epistémica.
+      </p>
     </div>
   </section>
 
   <!-- SECCIÓN 2: ESTRUCTURA -->
   <section class="section">
     <div class="container">
-      <p class="section-label reveal">II — La estructura</p>
-      <h2 class="section-title reveal">El año comienza en junio</h2>
+      <p class="section-label reveal" data-es="II — La estructura" data-en="II — The structure">II — La estructura</p>
+      <h2 class="section-title reveal" data-es="El año comienza en junio" data-en="The year begins in June">El año comienza en junio</h2>
 
-      <p class="reveal">El Calendario Sur no comienza en enero. Comienza en el <strong style="color:var(--gold)">Chirpantu</strong> — el año nuevo mapuche —, en el solsticio de invierno del hemisferio sur, entre el 20 y el 24 de junio. Desde ese momento, el año se estructura en <strong style="color:var(--text-bright)">trece lunas hasta el próximo solsticio</strong>.</p>
+      <p class="reveal"
+         data-es="El Calendario Sur no comienza en enero. Comienza en el <strong style='color:var(--gold)'>Chirpantu</strong> — el año nuevo mapuche —, en el solsticio de invierno del hemisferio sur, entre el 20 y el 24 de junio. Desde ese momento, el año se estructura en <strong style='color:var(--text-bright)'>trece lunas hasta el próximo solsticio</strong>."
+         data-en="The Southern Calendar does not begin in January. It begins at the <strong style='color:var(--gold)'>Chirpantu</strong> — the Mapuche New Year —, at the winter solstice of the southern hemisphere, between June 20 and 24. From that moment, the year unfolds across <strong style='color:var(--text-bright)'>thirteen moons until the next solstice</strong>.">
+        El Calendario Sur no comienza en enero. Comienza en el <strong style="color:var(--gold)">Chirpantu</strong> — el año nuevo mapuche —, en el solsticio de invierno del hemisferio sur, entre el 20 y el 24 de junio. Desde ese momento, el año se estructura en <strong style="color:var(--text-bright)">trece lunas hasta el próximo solsticio</strong>.
+      </p>
 
       <div class="grid-3 mt-2">
         <div class="feature reveal delay-1">
           <div class="icon">🌑</div>
-          <h3>28 días por luna</h3>
-          <p>Cada luna tiene veintiocho días con sus cuatro cambios marcados y nombrados en mapuzugun.</p>
+          <h3 data-es="28 días por luna" data-en="28 days per moon">28 días por luna</h3>
+          <p data-es="Cada luna tiene veintiocho días con sus cuatro cambios marcados y nombrados en mapuzugun." data-en="Each moon has twenty-eight days with its four phases marked and named in Mapuzugun.">Cada luna tiene veintiocho días con sus cuatro cambios marcados y nombrados en mapuzugun.</p>
         </div>
         <div class="feature reveal delay-2">
           <div class="icon">🌀</div>
-          <h3>13 lunas por año</h3>
-          <p>Desde el Chirpantu hasta el próximo solsticio de invierno. Cíclico, no lineal.</p>
+          <h3 data-es="13 lunas por año" data-en="13 moons per year">13 lunas por año</h3>
+          <p data-es="Desde el Chirpantu hasta el próximo solsticio de invierno. Cíclico, no lineal." data-en="From the Chirpantu to the next winter solstice. Cyclical, not linear.">Desde el Chirpantu hasta el próximo solsticio de invierno. Cíclico, no lineal.</p>
         </div>
         <div class="feature reveal delay-3">
           <div class="icon">✍️</div>
-          <h3>Espacio para anotar</h3>
-          <p>Cada página deja lugar para que quienes lo usan registren sus propios ciclos y observaciones.</p>
+          <h3 data-es="Espacio para anotar" data-en="Space to record">Espacio para anotar</h3>
+          <p data-es="Cada página deja lugar para que quienes lo usan registren sus propios ciclos y observaciones." data-en="Each page leaves room for users to record their own cycles and observations.">Cada página deja lugar para que quienes lo usan registren sus propios ciclos y observaciones.</p>
         </div>
       </div>
     </div>
@@ -216,88 +256,98 @@
   <!-- SECCIÓN 3: CONTEXTO HISTÓRICO -->
   <section class="section">
     <div class="container">
-      <p class="section-label reveal">III — Contexto histórico</p>
-      <h2 class="section-title reveal">El calendario gregoriano y la separación de los ciclos naturales</h2>
+      <p class="section-label reveal" data-es="III — Contexto histórico" data-en="III — Historical context">III — Contexto histórico</p>
+      <h2 class="section-title reveal"
+          data-es="El calendario gregoriano y la separación de los ciclos naturales"
+          data-en="The Gregorian calendar and the severing of natural cycles">El calendario gregoriano y la separación de los ciclos naturales</h2>
 
-      <p class="reveal">El calendario gregoriano, implementado globalmente a través de procesos coloniales, impuso una estructura temporal que desvinculó a las poblaciones de sus territorios y ciclos naturales locales. Basado en divisiones arbitrarias del año —doce meses de longitud variable—, perdió la conexión con los ciclos lunares que estructuraban los conocimientos ancestrales sobre siembra, cosecha, medicina y reproducción.</p>
-      <p class="reveal">La hegemonía de esta temporalidad no fue accidental: fue parte de un proyecto más amplio de homogeneización cultural y control territorial. Al imponer un único calendario "universal", se buscaba desacreditar y reemplazar los sistemas de conocimiento locales —incluyendo los calendarios lunares mapuche, que habían sostenido durante milenios una relación integral con el territorio.</p>
-      <p class="reveal">El Calendario Sur recupera esa lógica temporal perdida. No es un rechazo al conocimiento occidental, sino una <strong style="color:var(--text-bright)">restitución de saberes que fueron activamente suprimidos</strong> y que siguen siendo vitales para entender y habitar el territorio.</p>
+      <p class="reveal"
+         data-es="El calendario gregoriano, implementado globalmente a través de procesos coloniales, impuso una estructura temporal que desvinculó a las poblaciones de sus territorios y ciclos naturales locales. Basado en divisiones arbitrarias del año —doce meses de longitud variable—, perdió la conexión con los ciclos lunares que estructuraban los conocimientos ancestrales sobre siembra, cosecha, medicina y reproducción."
+         data-en="The Gregorian calendar, implemented globally through colonial processes, imposed a temporal structure that severed populations from their territories and local natural cycles. Based on arbitrary divisions of the year — twelve months of variable length — it lost the connection with the lunar cycles that had structured ancestral knowledge of planting, harvesting, medicine, and reproduction.">
+        El calendario gregoriano, implementado globalmente a través de procesos coloniales, impuso una estructura temporal que desvinculó a las poblaciones de sus territorios y ciclos naturales locales. Basado en divisiones arbitrarias del año —doce meses de longitud variable—, perdió la conexión con los ciclos lunares que estructuraban los conocimientos ancestrales sobre siembra, cosecha, medicina y reproducción.
+      </p>
+      <p class="reveal"
+         data-es="La hegemonía de esta temporalidad no fue accidental: fue parte de un proyecto más amplio de homogeneización cultural y control territorial. Al imponer un único calendario "universal", se buscaba desacreditar y reemplazar los sistemas de conocimiento locales —incluyendo los calendarios lunares mapuche, que habían sostenido durante milenios una relación integral con el territorio."
+         data-en="The hegemony of this temporality was not accidental: it was part of a broader project of cultural homogenization and territorial control. By imposing a single "universal" calendar, the aim was to discredit and replace local knowledge systems — including the Mapuche lunar calendars, which had sustained an integral relationship with the land for millennia.">
+        La hegemonía de esta temporalidad no fue accidental: fue parte de un proyecto más amplio de homogeneización cultural y control territorial. Al imponer un único calendario "universal", se buscaba desacreditar y reemplazar los sistemas de conocimiento locales —incluyendo los calendarios lunares mapuche, que habían sostenido durante milenios una relación integral con el territorio.
+      </p>
+      <p class="reveal"
+         data-es="El Calendario Sur recupera esa lógica temporal perdida. No es un rechazo al conocimiento occidental, sino una <strong style='color:var(--text-bright)'>restitución de saberes que fueron activamente suprimidos</strong> y que siguen siendo vitales para entender y habitar el territorio."
+         data-en="The Southern Calendar recovers that lost temporal logic. It is not a rejection of Western knowledge, but a <strong style='color:var(--text-bright)'>restitution of knowledge that was actively suppressed</strong> and remains vital for understanding and inhabiting the land.">
+        El Calendario Sur recupera esa lógica temporal perdida. No es un rechazo al conocimiento occidental, sino una <strong style="color:var(--text-bright)">restitución de saberes que fueron activamente suprimidos</strong> y que siguen siendo vitales para entender y habitar el territorio.
+      </p>
     </div>
   </section>
 
   <!-- SECCIÓN 4: EDICIONES -->
   <section class="section">
     <div class="container">
-      <p class="section-label reveal">IV — Ediciones documentadas</p>
-      <h2 class="section-title reveal">Veinte años de materialización</h2>
-      <p class="section-desc reveal">Cada edición responde a los ciclos reales del año en que fue producida. Las fechas lunares son específicas — cada calendario es único e irrepetible.</p>
+      <p class="section-label reveal" data-es="IV — Ediciones documentadas" data-en="IV — Documented editions">IV — Ediciones documentadas</p>
+      <h2 class="section-title reveal" data-es="Veinte años de materialización" data-en="Twenty years of materialization">Veinte años de materialización</h2>
+      <p class="section-desc reveal"
+         data-es="Cada edición responde a los ciclos reales del año en que fue producida. Las fechas lunares son específicas — cada calendario es único e irrepetible."
+         data-en="Each edition responds to the real cycles of the year in which it was produced. The lunar dates are specific — each calendar is unique and unrepeatable.">
+        Cada edición responde a los ciclos reales del año en que fue producida. Las fechas lunares son específicas — cada calendario es único e irrepetible.
+      </p>
 
       <div class="ediciones-grid">
-
         <div class="edicion-card reveal">
           <img src="img/CALENDARIO-MAPUCHE2.jpg" alt="Mapuche Quimün 2005" loading="lazy">
           <div class="edicion-card-body">
             <p class="edicion-year">2005</p>
             <p class="edicion-title">Mapuche Quimün</p>
-            <p class="edicion-desc">Primera edición. El kultrun como símbolo central desde el inicio. Germán Burgos + Lucas Curapil.</p>
+            <p class="edicion-desc" data-es="Primera edición. El kultrun como símbolo central desde el inicio. Germán Burgos + Lucas Curapil." data-en="First edition. The kultrun as central symbol from the very beginning. Germán Burgos + Lucas Curapil.">Primera edición. El kultrun como símbolo central desde el inicio. Germán Burgos + Lucas Curapil.</p>
           </div>
         </div>
-
         <div class="edicion-card reveal delay-1">
           <img src="img/epu-FULL.jpg" alt="Calendario Mapuche 2009" loading="lazy">
           <div class="edicion-card-body">
             <p class="edicion-year">2009</p>
-            <p class="edicion-title">Calendario Mapuche</p>
-            <p class="edicion-desc">Primera rueda lunar circular. Las cuatro fases nombradas en mapuzugun. Germán Burgos + Lucas Curapil.</p>
+            <p class="edicion-title" data-es="Calendario Mapuche" data-en="Mapuche Calendar">Calendario Mapuche</p>
+            <p class="edicion-desc" data-es="Primera rueda lunar circular. Las cuatro fases nombradas en mapuzugun. Germán Burgos + Lucas Curapil." data-en="First circular lunar wheel. The four phases named in Mapuzugun. Germán Burgos + Lucas Curapil.">Primera rueda lunar circular. Las cuatro fases nombradas en mapuzugun. Germán Burgos + Lucas Curapil.</p>
           </div>
         </div>
-
         <div class="edicion-card reveal delay-2">
           <img src="img/Lamina7 copia.jpg" alt="Calendario Mapuche Lunar 2013-2014" loading="lazy">
           <div class="edicion-card-body">
             <p class="edicion-year">2013–2014</p>
-            <p class="edicion-title">Calendario Mapuche Lunar</p>
-            <p class="edicion-desc">Texto introductorio en mapuzugun. Última edición en colaboración con Lucas Curapil.</p>
+            <p class="edicion-title" data-es="Calendario Mapuche Lunar" data-en="Mapuche Lunar Calendar">Calendario Mapuche Lunar</p>
+            <p class="edicion-desc" data-es="Texto introductorio en mapuzugun. Última edición en colaboración con Lucas Curapil." data-en="Introductory text in Mapuzugun. Last edition in collaboration with Lucas Curapil.">Texto introductorio en mapuzugun. Última edición en colaboración con Lucas Curapil.</p>
           </div>
         </div>
-
         <div class="edicion-card reveal">
           <img src="img/Lamina7.jpg" alt="Calendario Mapuche Lunar 2015-2016" loading="lazy">
           <div class="edicion-card-body">
             <p class="edicion-year">2015–2016</p>
-            <p class="edicion-title">Calendario Mapuche Lunar</p>
-            <p class="edicion-desc">Consolidación del formato de rueda con orientación cardinal completa. Fondo cosmos azul.</p>
+            <p class="edicion-title" data-es="Calendario Mapuche Lunar" data-en="Mapuche Lunar Calendar">Calendario Mapuche Lunar</p>
+            <p class="edicion-desc" data-es="Consolidación del formato de rueda con orientación cardinal completa. Fondo cosmos azul." data-en="Consolidation of the wheel format with full cardinal orientation. Blue cosmos background.">Consolidación del formato de rueda con orientación cardinal completa. Fondo cosmos azul.</p>
           </div>
         </div>
-
         <div class="edicion-card reveal delay-1">
           <img src="img/Instagram_story.jpg" alt="Calendario Lunar 2020-2021" loading="lazy">
           <div class="edicion-card-body">
             <p class="edicion-year">2020–2021</p>
-            <p class="edicion-title">Calendario Lunar</p>
-            <p class="edicion-desc">Primera edición en solitario. Nace la frase fundacional sobre el hemisferio sur.</p>
+            <p class="edicion-title" data-es="Calendario Lunar" data-en="Lunar Calendar">Calendario Lunar</p>
+            <p class="edicion-desc" data-es="Primera edición en solitario. Nace la frase fundacional sobre el hemisferio sur." data-en="First solo edition. The founding statement about the southern hemisphere is born.">Primera edición en solitario. Nace la frase fundacional sobre el hemisferio sur.</p>
           </div>
         </div>
-
         <div class="edicion-card reveal delay-2">
           <img src="img/Calendario_Sur.jpg" alt="Calendario Sur 2021-2022" loading="lazy">
           <div class="edicion-card-body">
             <p class="edicion-year">2021–2022</p>
             <p class="edicion-title">Calendario Sur</p>
-            <p class="edicion-desc">Nace la marca. Fondo cosmos verde y azul. Primera edición bajo la identidad Asociación LOF.</p>
-            <span class="edicion-tag">Primer Calendario Sur</span>
+            <p class="edicion-desc" data-es="Nace la marca. Fondo cosmos verde y azul. Primera edición bajo la identidad Asociación LOF." data-en="The brand is born. Green and blue cosmos background. First edition under the LOF Association identity.">Nace la marca. Fondo cosmos verde y azul. Primera edición bajo la identidad Asociación LOF.</p>
+            <span class="edicion-tag" data-es="Primer Calendario Sur" data-en="First Southern Calendar">Primer Calendario Sur</span>
           </div>
         </div>
-
         <div class="edicion-card reveal">
           <img src="img/Lamina_Central_2022-b copia.jpg" alt="Calendario Sur 2022-2023" loading="lazy">
           <div class="edicion-card-body">
             <p class="edicion-year">2022–2023</p>
             <p class="edicion-title">Calendario Sur</p>
-            <p class="edicion-desc">Fondo paisaje patagónico — lago y cordillera. La geografía del territorio como sostén de la cosmovisión.</p>
+            <p class="edicion-desc" data-es="Fondo paisaje patagónico — lago y cordillera. La geografía del territorio como sostén de la cosmovisión." data-en="Patagonian landscape background — lake and mountain range. The geography of the land as foundation of the cosmovision.">Fondo paisaje patagónico — lago y cordillera. La geografía del territorio como sostén de la cosmovisión.</p>
           </div>
         </div>
-
       </div>
     </div>
   </section>
@@ -305,129 +355,119 @@
   <!-- SECCIÓN 5: LÁMINAS -->
   <section class="section">
     <div class="container">
-      <p class="section-label reveal">V — Serie de láminas complementarias</p>
-      <h2 class="section-title reveal">Trece puertas de entrada a la cosmovisión</h2>
-      <p class="section-desc reveal">En paralelo al calendario, se desarrolló una serie de trece láminas temáticas que profundizan en distintos aspectos de la cosmovisión mapuche. Cada lámina es autónoma y puede usarse en talleres, espacios educativos o como obra individual.</p>
+      <p class="section-label reveal" data-es="V — Serie de láminas complementarias" data-en="V — Complementary print series">V — Serie de láminas complementarias</p>
+      <h2 class="section-title reveal" data-es="Trece puertas de entrada a la cosmovisión" data-en="Thirteen doorways into the cosmovision">Trece puertas de entrada a la cosmovisión</h2>
+      <p class="section-desc reveal"
+         data-es="En paralelo al calendario, se desarrolló una serie de trece láminas temáticas que profundizan en distintos aspectos de la cosmovisión mapuche. Cada lámina es autónoma y puede usarse en talleres, espacios educativos o como obra individual."
+         data-en="Alongside the calendar, a series of thirteen thematic prints was developed, exploring different aspects of Mapuche cosmovision. Each print is self-contained and can be used in workshops, educational spaces, or as an individual artwork.">
+        En paralelo al calendario, se desarrolló una serie de trece láminas temáticas que profundizan en distintos aspectos de la cosmovisión mapuche. Cada lámina es autónoma y puede usarse en talleres, espacios educativos o como obra individual.
+      </p>
 
       <div class="laminas-grid">
-
         <div class="lamina-card reveal">
           <img src="img/Lamina1 copia.jpg" alt="Meli Ñom Mapu" loading="lazy">
           <div class="lamina-card-body">
             <p class="lamina-num">01</p>
             <p class="lamina-mapuche">Meli Ñom Mapu</p>
-            <p class="lamina-es">4 Puntos Cardinales</p>
+            <p class="lamina-es" data-es="4 Puntos Cardinales" data-en="4 Cardinal Points">4 Puntos Cardinales</p>
           </div>
         </div>
-
         <div class="lamina-card reveal delay-1">
           <img src="img/Lamina2 copia.jpg" alt="Meli Chroi Chripantu" loading="lazy">
           <div class="lamina-card-body">
             <p class="lamina-num">02</p>
             <p class="lamina-mapuche">Meli Chroi Chripantu</p>
-            <p class="lamina-es">4 Estaciones</p>
+            <p class="lamina-es" data-es="4 Estaciones" data-en="4 Seasons">4 Estaciones</p>
           </div>
         </div>
-
         <div class="lamina-card reveal delay-2">
           <img src="img/Lamina3 copia.jpg" alt="Meli Huichran Mapu" loading="lazy">
           <div class="lamina-card-body">
             <p class="lamina-num">03</p>
             <p class="lamina-mapuche">Meli Huichran Mapu</p>
-            <p class="lamina-es">4 Elementos</p>
+            <p class="lamina-es" data-es="4 Elementos" data-en="4 Elements">4 Elementos</p>
           </div>
         </div>
-
         <div class="lamina-card reveal">
           <img src="img/Lamina4 copia.jpg" alt="Meli Chroi Monguen" loading="lazy">
           <div class="lamina-card-body">
             <p class="lamina-num">04</p>
             <p class="lamina-mapuche">Meli Chroi Monguen</p>
-            <p class="lamina-es">4 Etapas de la Vida</p>
+            <p class="lamina-es" data-es="4 Etapas de la Vida" data-en="4 Stages of Life">4 Etapas de la Vida</p>
           </div>
         </div>
-
         <div class="lamina-card reveal delay-1">
           <img src="img/Lamina5lof copia.jpg" alt="Meli Chroi Quihien" loading="lazy">
           <div class="lamina-card-body">
             <p class="lamina-num">05</p>
             <p class="lamina-mapuche">Meli Chroi Quihien</p>
-            <p class="lamina-es">4 Cambios de la Luna</p>
+            <p class="lamina-es" data-es="4 Cambios de la Luna" data-en="4 Phases of the Moon">4 Cambios de la Luna</p>
           </div>
         </div>
-
         <div class="lamina-card reveal delay-2">
           <img src="img/Lamina6 copia.jpg" alt="Quihien Ñi Quimün" loading="lazy">
           <div class="lamina-card-body">
             <p class="lamina-num">06</p>
             <p class="lamina-mapuche">Quihien Ñi Quimün</p>
-            <p class="lamina-es">13 Ciclos Lunares</p>
+            <p class="lamina-es" data-es="13 Ciclos Lunares" data-en="13 Lunar Cycles">13 Ciclos Lunares</p>
           </div>
         </div>
-
         <div class="lamina-card reveal">
           <img src="img/Lamina7 copia.jpg" alt="Rueda de los 13 Ciclos" loading="lazy">
           <div class="lamina-card-body">
             <p class="lamina-num">07</p>
-            <p class="lamina-mapuche">Rueda de los 13 Ciclos</p>
-            <p class="lamina-es">Calendario circular completo</p>
+            <p class="lamina-mapuche" data-es="Rueda de los 13 Ciclos" data-en="Wheel of 13 Cycles">Rueda de los 13 Ciclos</p>
+            <p class="lamina-es" data-es="Calendario circular completo" data-en="Complete circular calendar">Calendario circular completo</p>
           </div>
         </div>
-
         <div class="lamina-card reveal delay-1">
           <img src="img/Lamina8 copia.jpg" alt="Üñoi Chripantu" loading="lazy">
           <div class="lamina-card-body">
             <p class="lamina-num">08</p>
             <p class="lamina-mapuche">Üñoi Chripantu</p>
-            <p class="lamina-es">Vuelta del Año Solar</p>
+            <p class="lamina-es" data-es="Vuelta del Año Solar" data-en="Return of the Solar Year">Vuelta del Año Solar</p>
           </div>
         </div>
-
         <div class="lamina-card reveal delay-2">
           <img src="img/Lamina9 copia.jpg" alt="Pelon Antüg" loading="lazy">
           <div class="lamina-card-body">
             <p class="lamina-num">09</p>
             <p class="lamina-mapuche">Pelon Antüg</p>
-            <p class="lamina-es">Momentos del Día</p>
+            <p class="lamina-es" data-es="Momentos del Día" data-en="Moments of the Day">Momentos del Día</p>
           </div>
         </div>
-
         <div class="lamina-card reveal">
           <img src="img/Lamina10 copia.jpg" alt="Huall Mapu Ñi Nehuen" loading="lazy">
           <div class="lamina-card-body">
             <p class="lamina-num">10</p>
             <p class="lamina-mapuche">Huall Mapu Ñi Nehuen</p>
-            <p class="lamina-es">Influencia del Universo</p>
+            <p class="lamina-es" data-es="Influencia del Universo" data-en="Influence of the Universe">Influencia del Universo</p>
           </div>
         </div>
-
         <div class="lamina-card reveal delay-1">
           <img src="img/Lamina11 copia.jpg" alt="Nguellipun Zungun" loading="lazy">
           <div class="lamina-card-body">
             <p class="lamina-num">11</p>
             <p class="lamina-mapuche">Nguellipun Zungun</p>
-            <p class="lamina-es">Conocimientos de la Rogativa</p>
+            <p class="lamina-es" data-es="Conocimientos de la Rogativa" data-en="Knowledge of the Rogativa Ceremony">Conocimientos de la Rogativa</p>
           </div>
         </div>
-
         <div class="lamina-card reveal delay-2">
           <img src="img/Lamina12 copia.jpg" alt="Pu Cullin Ca Pu Amünca" loading="lazy">
           <div class="lamina-card-body">
             <p class="lamina-num">12</p>
             <p class="lamina-mapuche">Pu Cullin Ca Pu Amünca</p>
-            <p class="lamina-es">Animales y Plantas</p>
+            <p class="lamina-es" data-es="Animales y Plantas" data-en="Animals and Plants">Animales y Plantas</p>
           </div>
         </div>
-
         <div class="lamina-card reveal">
           <img src="img/Lamina13 copia.jpg" alt="Anumca Ca Llahueñ" loading="lazy">
           <div class="lamina-card-body">
             <p class="lamina-num">13</p>
             <p class="lamina-mapuche">Anumca Ca Llahueñ</p>
-            <p class="lamina-es">Árboles y Plantas Medicinales</p>
+            <p class="lamina-es" data-es="Árboles y Plantas Medicinales" data-en="Trees and Medicinal Plants">Árboles y Plantas Medicinales</p>
           </div>
         </div>
-
       </div>
     </div>
   </section>
@@ -435,26 +475,43 @@
   <!-- SECCIÓN 6: GRAFEMARIO -->
   <section class="section">
     <div class="container">
-      <p class="section-label reveal">VI — Nota sobre el grafemario</p>
-      <h2 class="section-title reveal">La escritura del mapuzugun en el Calendario Sur</h2>
+      <p class="section-label reveal" data-es="VI — Nota sobre el grafemario" data-en="VI — Note on the writing system">VI — Nota sobre el grafemario</p>
+      <h2 class="section-title reveal"
+          data-es="La escritura del mapuzugun en el Calendario Sur"
+          data-en="Writing Mapuzugun in the Southern Calendar">La escritura del mapuzugun en el Calendario Sur</h2>
       <div class="nota-grafemario reveal">
-        <p class="nota-label">Nota técnica y conceptual</p>
-        <p>Las primeras ediciones del Calendario Sur fueron desarrolladas usando el <strong style="color:var(--text-bright)">Grafemario Antinao</strong>, una propuesta de escritura del mapuzugun desarrollada por Nicasio Carmelo Antinao, lingüista mapuche de la Universidad Nacional del Comahue. Este grafemario responde a la fonética del mapuzugun hablado en el <em>Puel Mapu</em> — el norte patagónico argentino — y fue la herramienta utilizada por Lucas Curapil en sus talleres de lengua mapuche en la región.</p>
-        <p>Las ediciones más recientes y las próximas producciones migran al <strong style="color:var(--text-bright)">Grafemario Ranileo</strong>, desarrollado por Anselmo Raguileo, que se ha consolidado como el sistema más utilizado en espacios académicos y de difusión cultural mapuche a nivel continental. Esta transición permite que el Calendario Sur llegue a más personas sin perder su rigor conceptual ni su anclaje territorial.</p>
+        <p class="nota-label" data-es="Nota técnica y conceptual" data-en="Technical and conceptual note">Nota técnica y conceptual</p>
+        <p data-es="Las primeras ediciones del Calendario Sur fueron desarrolladas usando el <strong style='color:var(--text-bright)'>Grafemario Antinao</strong>, una propuesta de escritura del mapuzugun desarrollada por Nicasio Carmelo Antinao, lingüista mapuche de la Universidad Nacional del Comahue. Este grafemario responde a la fonética del mapuzugun hablado en el <em>Puel Mapu</em> — el norte patagónico argentino — y fue la herramienta utilizada por Lucas Curapil en sus talleres de lengua mapuche en la región."
+           data-en="The first editions of the Southern Calendar were developed using the <strong style='color:var(--text-bright)'>Antinao Writing System</strong>, a Mapuzugun orthography created by Nicasio Carmelo Antinao, a Mapuche linguist at the Universidad Nacional del Comahue. This system reflects the phonetics of Mapuzugun as spoken in the <em>Puel Mapu</em> — the Argentine northern Patagonia — and was the tool used by Lucas Curapil in his Mapuche language workshops in the region.">
+          Las primeras ediciones del Calendario Sur fueron desarrolladas usando el <strong style="color:var(--text-bright)">Grafemario Antinao</strong>, una propuesta de escritura del mapuzugun desarrollada por Nicasio Carmelo Antinao, lingüista mapuche de la Universidad Nacional del Comahue. Este grafemario responde a la fonética del mapuzugun hablado en el <em>Puel Mapu</em> — el norte patagónico argentino — y fue la herramienta utilizada por Lucas Curapil en sus talleres de lengua mapuche en la región.
+        </p>
+        <p data-es="Las ediciones más recientes y las próximas producciones migran al <strong style='color:var(--text-bright)'>Grafemario Ranileo</strong>, desarrollado por Anselmo Raguileo, que se ha consolidado como el sistema más utilizado en espacios académicos y de difusión cultural mapuche a nivel continental. Esta transición permite que el Calendario Sur llegue a más personas sin perder su rigor conceptual ni su anclaje territorial."
+           data-en="More recent editions and upcoming productions migrate to the <strong style='color:var(--text-bright)'>Ranileo Writing System</strong>, developed by Anselmo Raguileo, which has become the most widely used system in academic and Mapuche cultural spaces at a continental level. This transition allows the Southern Calendar to reach more people without losing its conceptual rigor or territorial grounding.">
+          Las ediciones más recientes y las próximas producciones migran al <strong style="color:var(--text-bright)">Grafemario Ranileo</strong>, desarrollado por Anselmo Raguileo, que se ha consolidado como el sistema más utilizado en espacios académicos y de difusión cultural mapuche a nivel continental. Esta transición permite que el Calendario Sur llegue a más personas sin perder su rigor conceptual ni su anclaje territorial.
+        </p>
       </div>
     </div>
   </section>
 
-  <!-- SECCIÓN 7: CONEXIÓN AMUTUY -->
+  <!-- SECCIÓN 7: AMUTUY -->
   <section class="section">
     <div class="container">
       <div class="bridge-amutuy reveal">
-        <p class="section-label">Continuidad en AMUTUY</p>
-        <h2 class="section-title" style="margin-bottom:.75rem">Del papel a la interfaz</h2>
-        <p>El Culchrung —el kultrun, tambor sagrado mapuche— aparece ya en la primera lámina del Calendario Sur como <em>"instrumento y símbolo sagrado"</em>. Era imagen. Era conocimiento en papel.</p>
-        <p style="margin-top:.75rem">En AMUTUY, el kultrun deja de ser imagen para convertirse en interfaz: un objeto físico que podés tocar, que responde, que convoca a escuchar el territorio desde adentro. El Calendario Sur y AMUTUY son dos momentos de un mismo proyecto — materializar la cosmovisión mapuche en formas que la gente pueda habitar, no solo leer.</p>
+        <p class="section-label" data-es="Continuidad en AMUTUY" data-en="Continuity in AMUTUY">Continuidad en AMUTUY</p>
+        <h2 class="section-title" style="margin-bottom:.75rem"
+            data-es="Del papel a la interfaz"
+            data-en="From paper to interface">Del papel a la interfaz</h2>
+        <p data-es="El Culchrung —el kultrun, tambor sagrado mapuche— aparece ya en la primera lámina del Calendario Sur como «instrumento y símbolo sagrado». Era imagen. Era conocimiento en papel."
+           data-en="The Culchrung — the kultrun, sacred Mapuche drum — appears already in the first print of the Southern Calendar as «instrument and sacred symbol». It was image. It was knowledge on paper.">
+          El Culchrung —el kultrun, tambor sagrado mapuche— aparece ya en la primera lámina del Calendario Sur como «instrumento y símbolo sagrado». Era imagen. Era conocimiento en papel.
+        </p>
+        <p style="margin-top:.75rem"
+           data-es="En AMUTUY, el kultrun deja de ser imagen para convertirse en interfaz: un objeto físico que podés tocar, que responde, que convoca a escuchar el territorio desde adentro. El Calendario Sur y AMUTUY son dos momentos de un mismo proyecto — materializar la cosmovisión mapuche en formas que la gente pueda habitar, no solo leer."
+           data-en="In AMUTUY, the kultrun ceases to be image and becomes interface: a physical object you can touch, that responds, that calls you to listen to the land from within. The Southern Calendar and AMUTUY are two moments of the same project — materializing Mapuche cosmovision in forms that people can inhabit, not merely read.">
+          En AMUTUY, el kultrun deja de ser imagen para convertirse en interfaz: un objeto físico que podés tocar, que responde, que convoca a escuchar el territorio desde adentro. El Calendario Sur y AMUTUY son dos momentos de un mismo proyecto — materializar la cosmovisión mapuche en formas que la gente pueda habitar, no solo leer.
+        </p>
         <div class="flex-center mt-2">
-          <a href="../arte/index.html" class="btn btn-outline">Explorar AMUTUY →</a>
+          <a href="../arte/index.html" class="btn btn-outline" data-es="Explorar AMUTUY →" data-en="Explore AMUTUY →">Explorar AMUTUY →</a>
         </div>
       </div>
     </div>
@@ -465,18 +522,48 @@
 <footer class="site-footer">
   <div class="container">
     <div class="footer-links">
-      <a href="../index.html">Inicio</a>
-      <a href="../arte/index.html">Arte Inmersivo</a>
-      <a href="../investigacion/index.html">Investigación</a>
+      <a href="../index.html" data-es="Inicio" data-en="Home">Inicio</a>
+      <a href="../arte/index.html" data-es="Arte Inmersivo" data-en="Immersive Art">Arte Inmersivo</a>
+      <a href="../investigacion/index.html" data-es="Investigación" data-en="Research">Investigación</a>
       <a href="../apps/index.html">Apps</a>
-      <a href="../docencia/index.html">Docencia</a>
-      <a href="../comunidad/index.html">Comunidad</a>
+      <a href="../docencia/index.html" data-es="Docencia" data-en="Teaching">Docencia</a>
+      <a href="../comunidad/index.html" data-es="Comunidad" data-en="Community">Comunidad</a>
     </div>
-    <p class="brand">Calfu<span>niarki</span> · Crear es creer · El Bolsón, Patagonia</p>
-    <p class="copy">&copy; 2026 Germán Burgos. Todos los derechos reservados.</p>
+    <p class="brand">Calfu<span>niarki</span> · <span data-es="Crear es creer" data-en="To create is to believe">Crear es creer</span> · El Bolsón, Patagonia</p>
+    <p class="copy">&copy; 2026 Germán Burgos. <span data-es="Todos los derechos reservados." data-en="All rights reserved.">Todos los derechos reservados.</span></p>
   </div>
 </footer>
 
 <script src="../main.js"></script>
+<script>
+  // === LANGUAGE SWITCHER ===
+  const STORAGE_KEY = 'calfuniarki-lang';
+
+  function setLang(lang) {
+    // Guardar preferencia
+    localStorage.setItem(STORAGE_KEY, lang);
+    document.documentElement.lang = lang;
+
+    // Actualizar botones
+    document.querySelectorAll('.lang-btn').forEach(btn => {
+      btn.classList.toggle('active', btn.dataset.lang === lang);
+    });
+
+    // Actualizar todos los elementos con data-es / data-en
+    document.querySelectorAll('[data-es][data-en]').forEach(el => {
+      const text = el.dataset[lang];
+      if (text) el.innerHTML = text;
+    });
+  }
+
+  // Botones de idioma
+  document.querySelectorAll('.lang-btn').forEach(btn => {
+    btn.addEventListener('click', () => setLang(btn.dataset.lang));
+  });
+
+  // Aplicar idioma guardado al cargar
+  const savedLang = localStorage.getItem(STORAGE_KEY) || 'es';
+  setLang(savedLang);
+</script>
 </body>
 </html>
