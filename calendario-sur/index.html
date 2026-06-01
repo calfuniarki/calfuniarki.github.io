@@ -7,11 +7,10 @@
   <meta name="description" content="Serie artística de cosmovisión mapuche. Trece lunas para el hemisferio sur. Germán Burgos / Calfuniarki — 2005 a la actualidad.">
   <meta property="og:title" content="Calendario Sur — Calfuniarki">
   <meta property="og:description" content="Una obra que materializa la cosmovisión mapuche en imagen impresa desde 2005.">
-  <meta property="og:image" content="https://calfuniarki.com/img/og-image.svg">
+  <meta property="og:image" content="https://calfuniarki.com/calendario-sur/img/Calendario copia.jpg">
   <meta property="og:type" content="website">
   <link rel="stylesheet" href="../styles.css">
   <style>
-    /* Estilos específicos de Calendario Sur — complementan styles.css */
     .edicion-tag {
       display: inline-block;
       font-size: .72rem; font-weight: 600;
@@ -21,28 +20,90 @@
       border-radius: 20px; padding: .25rem .75rem;
       margin-top: .75rem;
     }
-    .laminas-list { margin: 2rem 0; }
-    .lamina-row {
+
+    /* Galería de ediciones */
+    .ediciones-grid {
       display: grid;
-      grid-template-columns: 48px 1fr;
-      gap: 1rem; align-items: start;
-      padding: 1.1rem 0;
-      border-bottom: 1px solid var(--border);
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 1.5rem;
+      margin: 2rem 0;
     }
-    .lamina-row:last-child { border-bottom: none; }
+    .edicion-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      overflow: hidden;
+      transition: transform .35s var(--ease), border-color .35s;
+    }
+    .edicion-card:hover {
+      transform: translateY(-4px);
+      border-color: var(--border-h);
+    }
+    .edicion-card img {
+      width: 100%;
+      aspect-ratio: 3/4;
+      object-fit: cover;
+      display: block;
+    }
+    .edicion-card-body {
+      padding: 1rem 1.1rem 1.25rem;
+    }
+    .edicion-year {
+      font-family: var(--serif);
+      font-size: 1.4rem; font-weight: 700;
+      color: var(--gold); margin-bottom: .1rem;
+    }
+    .edicion-title {
+      font-size: .85rem; font-style: italic;
+      color: var(--text-dim); margin-bottom: .5rem;
+    }
+    .edicion-desc {
+      font-size: .82rem; color: var(--text-dim);
+      line-height: 1.55; margin: 0;
+    }
+
+    /* Galería de láminas */
+    .laminas-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 1rem;
+      margin: 2rem 0;
+    }
+    .lamina-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      overflow: hidden;
+      transition: transform .3s var(--ease), border-color .3s;
+    }
+    .lamina-card:hover {
+      transform: translateY(-3px);
+      border-color: var(--border-h);
+    }
+    .lamina-card img {
+      width: 100%;
+      aspect-ratio: 4/3;
+      object-fit: cover;
+      display: block;
+    }
+    .lamina-card-body {
+      padding: .75rem 1rem .9rem;
+    }
     .lamina-num {
-      font-size: .78rem; font-weight: 600;
+      font-size: .72rem; font-weight: 600;
       color: var(--gold); letter-spacing: .1em;
-      padding-top: 2px; font-family: var(--sans);
+      margin-bottom: 2px;
     }
     .lamina-mapuche {
-      font-family: var(--serif); font-size: 1rem;
-      color: var(--text-bright); margin-bottom: 2px;
+      font-family: var(--serif);
+      font-size: .9rem; color: var(--text-bright);
+      margin-bottom: 1px;
     }
     .lamina-es {
-      font-size: .84rem; color: var(--text-dim);
+      font-size: .78rem; color: var(--text-dim);
       font-style: italic; margin: 0;
     }
+
     .nota-grafemario {
       background: var(--surface);
       border: 1px solid var(--border);
@@ -61,6 +122,7 @@
       margin-bottom: .65rem;
     }
     .nota-grafemario p:last-child { margin-bottom: 0; }
+
     .bridge-amutuy {
       background: linear-gradient(160deg, rgba(200,164,92,.08), rgba(200,164,92,.03));
       border: 1px solid var(--border-h);
@@ -72,41 +134,33 @@
       position: absolute; top: 0; left: 0; right: 0; height: 2px;
       background: linear-gradient(90deg, transparent, var(--gold), transparent);
     }
-    .card-year {
-      font-family: var(--serif);
-      font-size: 1.75rem; font-weight: 700;
-      color: var(--gold); margin-bottom: .1rem;
-    }
   </style>
 </head>
 <body>
 
-<!-- HEADER — misma estructura que el resto del sitio -->
+<canvas id="particles"></canvas>
+<div class="nav-overlay"></div>
+
 <header class="site-header">
   <div class="container">
     <a href="../index.html" class="logo">Calfu<span>niarki</span></a>
-    <button class="menu-toggle" aria-label="Menú" aria-expanded="false">
+    <button class="menu-toggle" aria-label="Menú">
       <span></span><span></span><span></span>
     </button>
-    <nav>
-      <ul class="nav-links">
-        <li><a href="../arte/index.html">Arte Inmersivo</a></li>
-        <li><a href="../index.html#calendario-sur" class="active">Calendario Sur</a></li>
-        <li><a href="../investigacion/index.html">Investigación</a></li>
-        <li><a href="../apps/index.html">Apps</a></li>
-        <li><a href="../docencia/index.html">Docencia</a></li>
-        <li><a href="../comunidad/index.html">Comunidad</a></li>
-      </ul>
+    <nav class="nav-links">
+      <a href="../arte/index.html">Arte Inmersivo</a>
+      <a href="../calendario-sur/index.html" class="active">Calendario Sur</a>
+      <a href="../investigacion/index.html">Investigación</a>
+      <a href="../apps/index.html">Apps</a>
+      <a href="../docencia/index.html">Docencia</a>
+      <a href="../comunidad/index.html">Comunidad</a>
     </nav>
-    <div class="nav-overlay"></div>
   </div>
 </header>
 
-<canvas id="particles"></canvas>
-
 <main>
 
-  <!-- PAGE HERO -->
+  <!-- PAGE HERO con imagen de portada -->
   <div class="page-hero">
     <div class="container">
       <p class="section-label reveal">Serie artística · 2005–presente</p>
@@ -120,7 +174,6 @@
     <div class="container">
       <p class="section-label reveal">I — Origen y trayectoria</p>
       <h2 class="section-title reveal">Una colaboración que nació del territorio</h2>
-      <p class="section-desc reveal">Obra gráfica · Cosmovisión mapuche · Distribución territorial · Patagonia Argentina</p>
 
       <div class="highlight-box reveal">
         <p>"Este es un aporte para pensar un calendario propio para el hemisferio sur. Para los seres que aquí habitamos y buscamos una relación más armónica con nuestro entorno. Una forma simple de autoafirmación."</p>
@@ -157,8 +210,6 @@
           <p>Cada página deja lugar para que quienes lo usan registren sus propios ciclos y observaciones.</p>
         </div>
       </div>
-
-      <p class="reveal mt-2">Es una redefinición de dónde comienza el año. No en enero. En junio. En Patagonia. En el momento en que la tierra gira hacia adentro, hacia el frío, hacia la introspección. Cada trece lunas, se vuelve al Chirpantu.</p>
     </div>
   </section>
 
@@ -181,43 +232,72 @@
       <h2 class="section-title reveal">Veinte años de materialización</h2>
       <p class="section-desc reveal">Cada edición responde a los ciclos reales del año en que fue producida. Las fechas lunares son específicas — cada calendario es único e irrepetible.</p>
 
-      <div class="timeline reveal">
-        <div class="timeline-item">
-          <h3>Mapuche Quimün — Conocimiento de la Gente de la Tierra</h3>
-          <p class="meta">2005 · Germán Burgos + Lucas Curapil</p>
-          <p>Primera edición. Formato con meses gregorianos y ciclos lunares superpuestos. El kultrun como símbolo central desde el inicio.</p>
+      <div class="ediciones-grid">
+
+        <div class="edicion-card reveal">
+          <img src="img/CALENDARIO-MAPUCHE2.jpg" alt="Mapuche Quimün 2005" loading="lazy">
+          <div class="edicion-card-body">
+            <p class="edicion-year">2005</p>
+            <p class="edicion-title">Mapuche Quimün</p>
+            <p class="edicion-desc">Primera edición. El kultrun como símbolo central desde el inicio. Germán Burgos + Lucas Curapil.</p>
+          </div>
         </div>
-        <div class="timeline-item">
-          <h3>Calendario Mapuche</h3>
-          <p class="meta">2009 · Germán Burgos + Lucas Curapil</p>
-          <p>Primera edición con rueda lunar circular. Las cuatro fases nombradas en mapuzugun. Fondo cosmos.</p>
+
+        <div class="edicion-card reveal delay-1">
+          <img src="img/epu-FULL.jpg" alt="Calendario Mapuche 2009" loading="lazy">
+          <div class="edicion-card-body">
+            <p class="edicion-year">2009</p>
+            <p class="edicion-title">Calendario Mapuche</p>
+            <p class="edicion-desc">Primera rueda lunar circular. Las cuatro fases nombradas en mapuzugun. Germán Burgos + Lucas Curapil.</p>
+          </div>
         </div>
-        <div class="timeline-item">
-          <h3>Calendario Mapuche Lunar</h3>
-          <p class="meta">2013–2014 · Germán Burgos + Lucas Curapil</p>
-          <p>Texto introductorio en mapuzugun. Última edición en colaboración con Lucas Curapil.</p>
+
+        <div class="edicion-card reveal delay-2">
+          <img src="img/Lamina7 copia.jpg" alt="Calendario Mapuche Lunar 2013-2014" loading="lazy">
+          <div class="edicion-card-body">
+            <p class="edicion-year">2013–2014</p>
+            <p class="edicion-title">Calendario Mapuche Lunar</p>
+            <p class="edicion-desc">Texto introductorio en mapuzugun. Última edición en colaboración con Lucas Curapil.</p>
+          </div>
         </div>
-        <div class="timeline-item">
-          <h3>Calendario Mapuche Lunar</h3>
-          <p class="meta">2015–2016 · Germán Burgos + Lucas Curapil</p>
-          <p>Consolidación del formato de rueda con orientación cardinal completa. Fondo cosmos azul.</p>
+
+        <div class="edicion-card reveal">
+          <img src="img/Lamina7.jpg" alt="Calendario Mapuche Lunar 2015-2016" loading="lazy">
+          <div class="edicion-card-body">
+            <p class="edicion-year">2015–2016</p>
+            <p class="edicion-title">Calendario Mapuche Lunar</p>
+            <p class="edicion-desc">Consolidación del formato de rueda con orientación cardinal completa. Fondo cosmos azul.</p>
+          </div>
         </div>
-        <div class="timeline-item">
-          <h3>Calendario Lunar</h3>
-          <p class="meta">2020–2021 · Germán Burgos</p>
-          <p>Primera edición en solitario. Aparece la frase fundacional sobre el hemisferio sur. Fondo cosmos oscuro con estrellas.</p>
+
+        <div class="edicion-card reveal delay-1">
+          <img src="img/Instagram_story.jpg" alt="Calendario Lunar 2020-2021" loading="lazy">
+          <div class="edicion-card-body">
+            <p class="edicion-year">2020–2021</p>
+            <p class="edicion-title">Calendario Lunar</p>
+            <p class="edicion-desc">Primera edición en solitario. Nace la frase fundacional sobre el hemisferio sur.</p>
+          </div>
         </div>
-        <div class="timeline-item">
-          <h3>Calendario Sur</h3>
-          <p class="meta">2021–2022 · Germán Burgos / Asociación LOF Proyecto Comunitario</p>
-          <p>Nace la marca. Fondo cosmos verde y azul. Primera edición bajo la identidad Asociación LOF.</p>
-          <span class="edicion-tag">Primer Calendario Sur</span>
+
+        <div class="edicion-card reveal delay-2">
+          <img src="img/Calendario_Sur.jpg" alt="Calendario Sur 2021-2022" loading="lazy">
+          <div class="edicion-card-body">
+            <p class="edicion-year">2021–2022</p>
+            <p class="edicion-title">Calendario Sur</p>
+            <p class="edicion-desc">Nace la marca. Fondo cosmos verde y azul. Primera edición bajo la identidad Asociación LOF.</p>
+            <span class="edicion-tag">Primer Calendario Sur</span>
+          </div>
         </div>
-        <div class="timeline-item">
-          <h3>Calendario Sur</h3>
-          <p class="meta">2022–2023 · Germán Burgos / Asociación LOF Proyecto Comunitario</p>
-          <p>Fondo paisaje patagónico — lago y cordillera. La geografía del territorio como sostén de la cosmovisión.</p>
+
+        <div class="edicion-card reveal">
+          <img src="img/Lamina_Central_2022-b copia.jpg" alt="Calendario Sur 2022-2023" loading="lazy">
+          <div class="edicion-card-body">
+            <p class="edicion-year">2022–2023</p>
+            <p class="edicion-title">Calendario Sur</p>
+            <p class="edicion-desc">Fondo paisaje patagónico — lago y cordillera. La geografía del territorio como sostén de la cosmovisión.</p>
+          </div>
         </div>
+
       </div>
     </div>
   </section>
@@ -229,98 +309,125 @@
       <h2 class="section-title reveal">Trece puertas de entrada a la cosmovisión</h2>
       <p class="section-desc reveal">En paralelo al calendario, se desarrolló una serie de trece láminas temáticas que profundizan en distintos aspectos de la cosmovisión mapuche. Cada lámina es autónoma y puede usarse en talleres, espacios educativos o como obra individual.</p>
 
-      <div class="laminas-list reveal">
-        <div class="lamina-row">
-          <span class="lamina-num">01</span>
-          <div>
+      <div class="laminas-grid">
+
+        <div class="lamina-card reveal">
+          <img src="img/Lamina1 copia.jpg" alt="Meli Ñom Mapu" loading="lazy">
+          <div class="lamina-card-body">
+            <p class="lamina-num">01</p>
             <p class="lamina-mapuche">Meli Ñom Mapu</p>
-            <p class="lamina-es">4 Puntos Cardinales — el Culchrung como instrumento y símbolo sagrado</p>
+            <p class="lamina-es">4 Puntos Cardinales</p>
           </div>
         </div>
-        <div class="lamina-row">
-          <span class="lamina-num">02</span>
-          <div>
+
+        <div class="lamina-card reveal delay-1">
+          <img src="img/Lamina2 copia.jpg" alt="Meli Chroi Chripantu" loading="lazy">
+          <div class="lamina-card-body">
+            <p class="lamina-num">02</p>
             <p class="lamina-mapuche">Meli Chroi Chripantu</p>
-            <p class="lamina-es">4 Estaciones — solsticios y equinoccios en el hemisferio sur</p>
+            <p class="lamina-es">4 Estaciones</p>
           </div>
         </div>
-        <div class="lamina-row">
-          <span class="lamina-num">03</span>
-          <div>
+
+        <div class="lamina-card reveal delay-2">
+          <img src="img/Lamina3 copia.jpg" alt="Meli Huichran Mapu" loading="lazy">
+          <div class="lamina-card-body">
+            <p class="lamina-num">03</p>
             <p class="lamina-mapuche">Meli Huichran Mapu</p>
-            <p class="lamina-es">4 Elementos — Nehien (Aire), Huenu (Cielo), Co (Agua), Mapu (Tierra)</p>
+            <p class="lamina-es">4 Elementos</p>
           </div>
         </div>
-        <div class="lamina-row">
-          <span class="lamina-num">04</span>
-          <div>
+
+        <div class="lamina-card reveal">
+          <img src="img/Lamina4 copia.jpg" alt="Meli Chroi Monguen" loading="lazy">
+          <div class="lamina-card-body">
+            <p class="lamina-num">04</p>
             <p class="lamina-mapuche">Meli Chroi Monguen</p>
-            <p class="lamina-es">4 Etapas de la Vida — Tuhun, Llegümün, Chremün, Lan</p>
+            <p class="lamina-es">4 Etapas de la Vida</p>
           </div>
         </div>
-        <div class="lamina-row">
-          <span class="lamina-num">05</span>
-          <div>
+
+        <div class="lamina-card reveal delay-1">
+          <img src="img/Lamina5lof copia.jpg" alt="Meli Chroi Quihien" loading="lazy">
+          <div class="lamina-card-body">
+            <p class="lamina-num">05</p>
             <p class="lamina-mapuche">Meli Chroi Quihien</p>
-            <p class="lamina-es">4 Cambios de la Luna — Apo, Chrem, Af, Hue Quihien</p>
+            <p class="lamina-es">4 Cambios de la Luna</p>
           </div>
         </div>
-        <div class="lamina-row">
-          <span class="lamina-num">06</span>
-          <div>
+
+        <div class="lamina-card reveal delay-2">
+          <img src="img/Lamina6 copia.jpg" alt="Quihien Ñi Quimün" loading="lazy">
+          <div class="lamina-card-body">
+            <p class="lamina-num">06</p>
             <p class="lamina-mapuche">Quihien Ñi Quimün</p>
-            <p class="lamina-es">13 Ciclos Lunares en el año solar</p>
+            <p class="lamina-es">13 Ciclos Lunares</p>
           </div>
         </div>
-        <div class="lamina-row">
-          <span class="lamina-num">07</span>
-          <div>
+
+        <div class="lamina-card reveal">
+          <img src="img/Lamina7 copia.jpg" alt="Rueda de los 13 Ciclos" loading="lazy">
+          <div class="lamina-card-body">
+            <p class="lamina-num">07</p>
             <p class="lamina-mapuche">Rueda de los 13 Ciclos</p>
-            <p class="lamina-es">El calendario circular completo con orientación cardinal y todos los cambios de luna del año</p>
+            <p class="lamina-es">Calendario circular completo</p>
           </div>
         </div>
-        <div class="lamina-row">
-          <span class="lamina-num">08</span>
-          <div>
+
+        <div class="lamina-card reveal delay-1">
+          <img src="img/Lamina8 copia.jpg" alt="Üñoi Chripantu" loading="lazy">
+          <div class="lamina-card-body">
+            <p class="lamina-num">08</p>
             <p class="lamina-mapuche">Üñoi Chripantu</p>
-            <p class="lamina-es">Vuelta del Año Solar — la órbita elíptica y el recorrido del sol</p>
+            <p class="lamina-es">Vuelta del Año Solar</p>
           </div>
         </div>
-        <div class="lamina-row">
-          <span class="lamina-num">09</span>
-          <div>
+
+        <div class="lamina-card reveal delay-2">
+          <img src="img/Lamina9 copia.jpg" alt="Pelon Antüg" loading="lazy">
+          <div class="lamina-card-body">
+            <p class="lamina-num">09</p>
             <p class="lamina-mapuche">Pelon Antüg</p>
-            <p class="lamina-es">Momentos del Día — los 19 momentos del día y la noche en mapuzugun</p>
+            <p class="lamina-es">Momentos del Día</p>
           </div>
         </div>
-        <div class="lamina-row">
-          <span class="lamina-num">10</span>
-          <div>
+
+        <div class="lamina-card reveal">
+          <img src="img/Lamina10 copia.jpg" alt="Huall Mapu Ñi Nehuen" loading="lazy">
+          <div class="lamina-card-body">
+            <p class="lamina-num">10</p>
             <p class="lamina-mapuche">Huall Mapu Ñi Nehuen</p>
-            <p class="lamina-es">Influencia del Universo — orientación de la vivienda y el cuerpo en el territorio</p>
+            <p class="lamina-es">Influencia del Universo</p>
           </div>
         </div>
-        <div class="lamina-row">
-          <span class="lamina-num">11</span>
-          <div>
+
+        <div class="lamina-card reveal delay-1">
+          <img src="img/Lamina11 copia.jpg" alt="Nguellipun Zungun" loading="lazy">
+          <div class="lamina-card-body">
+            <p class="lamina-num">11</p>
             <p class="lamina-mapuche">Nguellipun Zungun</p>
-            <p class="lamina-es">Conocimientos de la Rogativa — la ceremonia espiritual de la Gente de la Tierra</p>
+            <p class="lamina-es">Conocimientos de la Rogativa</p>
           </div>
         </div>
-        <div class="lamina-row">
-          <span class="lamina-num">12</span>
-          <div>
+
+        <div class="lamina-card reveal delay-2">
+          <img src="img/Lamina12 copia.jpg" alt="Pu Cullin Ca Pu Amünca" loading="lazy">
+          <div class="lamina-card-body">
+            <p class="lamina-num">12</p>
             <p class="lamina-mapuche">Pu Cullin Ca Pu Amünca</p>
-            <p class="lamina-es">Animales y Plantas — el Mañque, el Nahuel, el Choique, el Luan y su rol sagrado</p>
+            <p class="lamina-es">Animales y Plantas</p>
           </div>
         </div>
-        <div class="lamina-row">
-          <span class="lamina-num">13</span>
-          <div>
+
+        <div class="lamina-card reveal">
+          <img src="img/Lamina13 copia.jpg" alt="Anumca Ca Llahueñ" loading="lazy">
+          <div class="lamina-card-body">
+            <p class="lamina-num">13</p>
             <p class="lamina-mapuche">Anumca Ca Llahueñ</p>
-            <p class="lamina-es">Árboles y Plantas Medicinales — el Pehueñ, el Foye, el Maiten, el Rungui</p>
+            <p class="lamina-es">Árboles y Plantas Medicinales</p>
           </div>
         </div>
+
       </div>
     </div>
   </section>
@@ -330,7 +437,6 @@
     <div class="container">
       <p class="section-label reveal">VI — Nota sobre el grafemario</p>
       <h2 class="section-title reveal">La escritura del mapuzugun en el Calendario Sur</h2>
-
       <div class="nota-grafemario reveal">
         <p class="nota-label">Nota técnica y conceptual</p>
         <p>Las primeras ediciones del Calendario Sur fueron desarrolladas usando el <strong style="color:var(--text-bright)">Grafemario Antinao</strong>, una propuesta de escritura del mapuzugun desarrollada por Nicasio Carmelo Antinao, lingüista mapuche de la Universidad Nacional del Comahue. Este grafemario responde a la fonética del mapuzugun hablado en el <em>Puel Mapu</em> — el norte patagónico argentino — y fue la herramienta utilizada por Lucas Curapil en sus talleres de lengua mapuche en la región.</p>
@@ -356,7 +462,6 @@
 
 </main>
 
-<!-- FOOTER — misma estructura que el resto del sitio -->
 <footer class="site-footer">
   <div class="container">
     <div class="footer-links">
@@ -368,7 +473,7 @@
       <a href="../comunidad/index.html">Comunidad</a>
     </div>
     <p class="brand">Calfu<span>niarki</span> · Crear es creer · El Bolsón, Patagonia</p>
-    <p class="copy">© 2026 Germán Burgos. Todos los derechos reservados.</p>
+    <p class="copy">&copy; 2026 Germán Burgos. Todos los derechos reservados.</p>
   </div>
 </footer>
 
