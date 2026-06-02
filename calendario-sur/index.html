@@ -9,8 +9,37 @@
   <meta property="og:description" content="Una obra que materializa la cosmovisión mapuche en imagen impresa desde 2005.">
   <meta property="og:image" content="https://calfuniarki.com/calendario-sur/img/c08.jpg">
   <meta property="og:type" content="website">
+  <!-- Favicon kultrun -->
+  <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+  <link rel="alternate icon" type="image/png" href="../favicon.svg">
+  <link rel="apple-touch-icon" href="../favicon.svg">
+
   <link rel="stylesheet" href="../styles.css">
   <style>
+    /* === LIGHTBOX === */
+    .lb-overlay {
+      display: none; position: fixed; inset: 0; z-index: 999;
+      background: rgba(0,0,0,.92);
+      align-items: center; justify-content: center;
+      cursor: zoom-out;
+    }
+    .lb-overlay.open { display: flex; }
+    .lb-overlay img {
+      max-width: 92vw; max-height: 92vh;
+      object-fit: contain; border-radius: 8px;
+      box-shadow: 0 0 60px rgba(0,0,0,.8);
+      cursor: default;
+    }
+    .lb-close {
+      position: fixed; top: 1.5rem; right: 1.5rem;
+      background: rgba(255,255,255,.12); border: none; cursor: pointer;
+      color: #fff; font-size: 1.5rem; width: 40px; height: 40px;
+      border-radius: 50%; display: flex; align-items: center; justify-content: center;
+      transition: background .2s;
+    }
+    .lb-close:hover { background: rgba(255,255,255,.25); }
+    .edicion-card img, .lamina-card img { cursor: zoom-in; }
+  </style>
     /* === LANGUAGE SWITCHER === */
     .lang-switcher {
       display: flex;
@@ -545,36 +574,50 @@
   </div>
 </footer>
 
+<!-- LIGHTBOX -->
+<div class="lb-overlay" id="lightbox">
+  <button class="lb-close" id="lb-close">✕</button>
+  <img id="lb-img" src="" alt="">
+</div>
+
 <script src="../main.js"></script>
 <script>
+  // === LIGHTBOX ===
+  const overlay = document.getElementById('lightbox');
+  const lbImg = document.getElementById('lb-img');
+  document.querySelectorAll('.edicion-card img, .lamina-card img').forEach(img => {
+    img.addEventListener('click', () => {
+      lbImg.src = img.src;
+      lbImg.alt = img.alt;
+      overlay.classList.add('open');
+      document.body.style.overflow = 'hidden';
+    });
+  });
+  function closeLb() {
+    overlay.classList.remove('open');
+    document.body.style.overflow = '';
+  }
+  document.getElementById('lb-close').addEventListener('click', closeLb);
+  overlay.addEventListener('click', e => { if (e.target === overlay) closeLb(); });
+  document.addEventListener('keydown', e => { if (e.key === 'Escape') closeLb(); });
+
   // === LANGUAGE SWITCHER ===
   const STORAGE_KEY = 'calfuniarki-lang';
-
   function setLang(lang) {
-    // Guardar preferencia
     localStorage.setItem(STORAGE_KEY, lang);
     document.documentElement.lang = lang;
-
-    // Actualizar botones
     document.querySelectorAll('.lang-btn').forEach(btn => {
       btn.classList.toggle('active', btn.dataset.lang === lang);
     });
-
-    // Actualizar todos los elementos con data-es / data-en
     document.querySelectorAll('[data-es][data-en]').forEach(el => {
       const text = el.dataset[lang];
       if (text) el.innerHTML = text;
     });
   }
-
-  // Botones de idioma
   document.querySelectorAll('.lang-btn').forEach(btn => {
     btn.addEventListener('click', () => setLang(btn.dataset.lang));
   });
-
-  // Aplicar idioma guardado al cargar
-  const savedLang = localStorage.getItem(STORAGE_KEY) || 'es';
-  setLang(savedLang);
+  setLang(localStorage.getItem(STORAGE_KEY) || 'es');
 </script>
 </body>
 </html>
