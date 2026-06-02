@@ -1,10 +1,16 @@
 <!DOCTYPE html>
+<html lang="es">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <title>Calfuniarki — Crear es creer</title>
   <meta name="description" content="Calfuniarki: arte inmersivo, humanidades digitales y desarrollo de apps con IA desde El Bolsón, Patagonia Argentina.">
   <link rel="canonical" href="https://calfuniarki.com/">
+
+  <!-- Favicon kultrun -->
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <link rel="alternate icon" type="image/png" href="favicon.svg">
+  <link rel="apple-touch-icon" href="favicon.svg">
 
   <!-- Open Graph -->
   <meta property="og:title" content="Calfuniarki — Crear es creer">
@@ -15,7 +21,6 @@
 
   <link rel="stylesheet" href="styles.css">
 
-  <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-L6TV3WDP4M"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
@@ -23,6 +28,21 @@
     gtag('js', new Date());
     gtag('config', 'G-L6TV3WDP4M');
   </script>
+
+  <style>
+    .lang-switcher {
+      display: flex; align-items: center; gap: .35rem; margin-left: .5rem;
+    }
+    .lang-btn {
+      background: none; border: none; cursor: pointer;
+      font-size: .8rem; font-family: var(--sans); font-weight: 400;
+      font-style: italic; padding: .2rem .4rem; border-radius: 6px;
+      color: var(--text-dim); opacity: .5;
+      transition: opacity .25s, color .25s; line-height: 1; letter-spacing: .05em;
+    }
+    .lang-btn:hover { opacity: .8; }
+    .lang-btn.active { opacity: 1; font-weight: 700; font-style: normal; color: var(--white); }
+  </style>
 </head>
 <body>
 
@@ -36,12 +56,16 @@
         <span></span><span></span><span></span>
       </button>
       <nav class="nav-links">
-        <a href="arte/index.html">Arte Inmersivo</a>
-        <a href="calendario-sur/index.html">Calendario Sur</a>
-        <a href="investigacion/index.html">Investigación</a>
+        <a href="arte/index.html" data-es="Arte Inmersivo" data-en="Immersive Art">Arte Inmersivo</a>
+        <a href="calendario-sur/index.html" data-es="Calendario Sur" data-en="Southern Calendar">Calendario Sur</a>
+        <a href="investigacion/index.html" data-es="Investigación" data-en="Research">Investigación</a>
         <a href="apps/index.html">Apps</a>
-        <a href="docencia/index.html">Docencia</a>
-        <a href="comunidad/index.html">Comunidad</a>
+        <a href="docencia/index.html" data-es="Docencia" data-en="Teaching">Docencia</a>
+        <a href="comunidad/index.html" data-es="Comunidad" data-en="Community">Comunidad</a>
+        <div class="lang-switcher">
+          <button class="lang-btn active" data-lang="es" title="Español">ES</button>
+          <button class="lang-btn" data-lang="en" title="English">EN</button>
+        </div>
       </nav>
     </div>
   </header>
@@ -50,70 +74,73 @@
     <section class="hero hero--bg" style="background-image:url('img/el-bolson.jpg')">
       <div class="hero-content">
         <h1 class="reveal">Calfuniarki</h1>
-        <p class="slogan reveal delay-1">Crear es creer</p>
-        <p class="subtitle reveal delay-2">Arte inmersivo · Humanidades Digitales · Desarrollo de apps con IA</p>
+        <p class="slogan reveal delay-1" data-es="Crear es creer" data-en="To create is to believe">Crear es creer</p>
+        <p class="subtitle reveal delay-2" data-es="Arte inmersivo · Humanidades Digitales · Desarrollo de apps con IA" data-en="Immersive art · Digital Humanities · AI app development">Arte inmersivo · Humanidades Digitales · Desarrollo de apps con IA</p>
         <p class="location reveal delay-3">El Bolsón, Patagonia Argentina</p>
         <div class="hero-nav reveal delay-4">
-          <a href="arte/index.html">Arte Inmersivo</a>
-          <a href="calendario-sur/index.html">Calendario Sur</a>
-          <a href="investigacion/index.html">Investigación</a>
+          <a href="arte/index.html" data-es="Arte Inmersivo" data-en="Immersive Art">Arte Inmersivo</a>
+          <a href="calendario-sur/index.html" data-es="Calendario Sur" data-en="Southern Calendar">Calendario Sur</a>
+          <a href="investigacion/index.html" data-es="Investigación" data-en="Research">Investigación</a>
           <a href="apps/index.html">Apps</a>
-          <a href="docencia/index.html">Docencia</a>
-          <a href="comunidad/index.html">Comunidad</a>
+          <a href="docencia/index.html" data-es="Docencia" data-en="Teaching">Docencia</a>
+          <a href="comunidad/index.html" data-es="Comunidad" data-en="Community">Comunidad</a>
         </div>
       </div>
       <div class="scroll-hint">
-        <span>Explorá</span>
+        <span data-es="Explorá" data-en="Explore">Explorá</span>
         <span class="arrow">↓</span>
       </div>
     </section>
 
-    <!-- Brief intro -->
     <section class="section">
       <div class="container">
         <div class="reveal text-center">
           <img src="img/Yo.jpg" alt="Germán Burgos — Calfuniarki" class="profile-photo" loading="lazy">
-          <p class="section-label">Sobre</p>
+          <p class="section-label" data-es="Sobre" data-en="About">Sobre</p>
           <h2 class="section-title">Germán Burgos</h2>
-          <p class="section-desc" style="margin-left:auto;margin-right:auto">Artista, investigador y desarrollador desde la Patagonia. Trabajo en la intersección entre la cosmovisión mapuche, las humanidades digitales decoloniales y la tecnología contemporánea.</p>
+          <p class="section-desc" style="margin-left:auto;margin-right:auto"
+             data-es="Artista, investigador y desarrollador desde la Patagonia. Trabajo en la intersección entre la cosmovisión mapuche, las humanidades digitales decoloniales y la tecnología contemporánea."
+             data-en="Artist, researcher and developer from Patagonia. I work at the intersection of Mapuche cosmovision, decolonial digital humanities and contemporary technology.">
+            Artista, investigador y desarrollador desde la Patagonia. Trabajo en la intersección entre la cosmovisión mapuche, las humanidades digitales decoloniales y la tecnología contemporánea.
+          </p>
         </div>
 
         <div class="grid-2 mt-2">
           <div class="card reveal">
-            <h3>Arte Inmersivo</h3>
-            <p class="card-tag">AMUTUY — Memoria viva del bosque interior</p>
-            <p>Paisajes sonoros, performances rituales, video 360° y audio binaural para habitar la memoria del bosque patagónico.</p>
-            <a href="arte/index.html" class="btn btn-outline btn-sm">Explorar →</a>
+            <h3 data-es="Arte Inmersivo" data-en="Immersive Art">Arte Inmersivo</h3>
+            <p class="card-tag" data-es="AMUTUY — Memoria viva del bosque interior" data-en="AMUTUY — Living memory of the inner forest">AMUTUY — Memoria viva del bosque interior</p>
+            <p data-es="Paisajes sonoros, performances rituales, video 360° y audio binaural para habitar la memoria del bosque patagónico." data-en="Sound landscapes, ritual performances, 360° video and binaural audio to inhabit the memory of the Patagonian forest.">Paisajes sonoros, performances rituales, video 360° y audio binaural para habitar la memoria del bosque patagónico.</p>
+            <a href="arte/index.html" class="btn btn-outline btn-sm" data-es="Explorar →" data-en="Explore →">Explorar →</a>
           </div>
           <div class="card reveal delay-1">
-            <h3>Calendario Sur</h3>
-            <p class="card-tag">Cosmovisión mapuche · Serie artística 2005–presente</p>
-            <p>Veinte años de materialización de los ciclos naturales en imagen impresa. Trece lunas para el hemisferio sur.</p>
-            <a href="calendario-sur/index.html" class="btn btn-outline btn-sm">Explorar →</a>
+            <h3 data-es="Calendario Sur" data-en="Southern Calendar">Calendario Sur</h3>
+            <p class="card-tag" data-es="Cosmovisión mapuche · Serie artística 2005–presente" data-en="Mapuche cosmovision · Artistic series 2005–present">Cosmovisión mapuche · Serie artística 2005–presente</p>
+            <p data-es="Veinte años de materialización de los ciclos naturales en imagen impresa. Trece lunas para el hemisferio sur." data-en="Twenty years of materializing natural cycles in printed image. Thirteen moons for the southern hemisphere.">Veinte años de materialización de los ciclos naturales en imagen impresa. Trece lunas para el hemisferio sur.</p>
+            <a href="calendario-sur/index.html" class="btn btn-outline btn-sm" data-es="Explorar →" data-en="Explore →">Explorar →</a>
           </div>
           <div class="card reveal">
-            <h3>Investigación</h3>
-            <p class="card-tag">Humanidades Digitales Decoloniales</p>
-            <p>Archivos inmersivos, memorias nativas y multimodalidad. Especialización y Maestría en Humanidades Digitales (UNTREF).</p>
-            <a href="investigacion/index.html" class="btn btn-outline btn-sm">Explorar →</a>
+            <h3 data-es="Investigación" data-en="Research">Investigación</h3>
+            <p class="card-tag" data-es="Humanidades Digitales Decoloniales" data-en="Decolonial Digital Humanities">Humanidades Digitales Decoloniales</p>
+            <p data-es="Archivos inmersivos, memorias nativas y multimodalidad. Especialización y Maestría en Humanidades Digitales (UNTREF)." data-en="Immersive archives, native memories and multimodality. Specialization and Master's in Digital Humanities (UNTREF).">Archivos inmersivos, memorias nativas y multimodalidad. Especialización y Maestría en Humanidades Digitales (UNTREF).</p>
+            <a href="investigacion/index.html" class="btn btn-outline btn-sm" data-es="Explorar →" data-en="Explore →">Explorar →</a>
           </div>
           <div class="card reveal delay-1">
             <h3>Apps con IA</h3>
             <p class="card-tag">KimunAI · Momento Zen</p>
-            <p>Herramientas que combinan inteligencia artificial, simplicidad y propósito para resolver problemas cotidianos.</p>
-            <a href="apps/index.html" class="btn btn-outline btn-sm">Explorar →</a>
+            <p data-es="Herramientas que combinan inteligencia artificial, simplicidad y propósito para resolver problemas cotidianos." data-en="Tools that combine artificial intelligence, simplicity and purpose to solve everyday problems.">Herramientas que combinan inteligencia artificial, simplicidad y propósito para resolver problemas cotidianos.</p>
+            <a href="apps/index.html" class="btn btn-outline btn-sm" data-es="Explorar →" data-en="Explore →">Explorar →</a>
           </div>
           <div class="card reveal">
-            <h3>Docencia</h3>
-            <p class="card-tag">Educación secundaria, El Bolsón</p>
-            <p>Integración de tecnología y pensamiento crítico en el aula. Enseñar como acto creativo.</p>
-            <a href="docencia/index.html" class="btn btn-outline btn-sm">Explorar →</a>
+            <h3 data-es="Docencia" data-en="Teaching">Docencia</h3>
+            <p class="card-tag" data-es="Educación secundaria, El Bolsón" data-en="Secondary education, El Bolsón">Educación secundaria, El Bolsón</p>
+            <p data-es="Integración de tecnología y pensamiento crítico en el aula. Enseñar como acto creativo." data-en="Integration of technology and critical thinking in the classroom. Teaching as a creative act.">Integración de tecnología y pensamiento crítico en el aula. Enseñar como acto creativo.</p>
+            <a href="docencia/index.html" class="btn btn-outline btn-sm" data-es="Explorar →" data-en="Explore →">Explorar →</a>
           </div>
           <div class="card reveal delay-1">
-            <h3>Comunidad</h3>
-            <p class="card-tag">LOF Proyecto Comunitario</p>
-            <p>Más de 20 años de trabajo social y comunitario en la Patagonia. Acompañamiento, territorio y construcción colectiva.</p>
-            <a href="comunidad/index.html" class="btn btn-outline btn-sm">Explorar →</a>
+            <h3 data-es="Comunidad" data-en="Community">Comunidad</h3>
+            <p class="card-tag" data-es="LOF Proyecto Comunitario" data-en="LOF Community Project">LOF Proyecto Comunitario</p>
+            <p data-es="Más de 20 años de trabajo social y comunitario en la Patagonia. Acompañamiento, territorio y construcción colectiva." data-en="More than 20 years of social and community work in Patagonia. Accompaniment, territory and collective building.">Más de 20 años de trabajo social y comunitario en la Patagonia. Acompañamiento, territorio y construcción colectiva.</p>
+            <a href="comunidad/index.html" class="btn btn-outline btn-sm" data-es="Explorar →" data-en="Explore →">Explorar →</a>
           </div>
         </div>
       </div>
@@ -128,11 +155,29 @@
         <a href="https://play.google.com/store/apps/developer?id=Calfuniarki" target="_blank" rel="noopener">Google Play</a>
         <a href="https://archivo.lof.org.ar" target="_blank" rel="noopener">Archivo Inmersivo</a>
       </div>
-      <p class="brand">Calfu<span>niarki</span> · Crear es creer · El Bolsón, Patagonia</p>
-      <p class="copy">&copy; 2026 Germán Burgos. Todos los derechos reservados.</p>
+      <p class="brand">Calfu<span>niarki</span> · <span data-es="Crear es creer" data-en="To create is to believe">Crear es creer</span> · El Bolsón, Patagonia</p>
+      <p class="copy">&copy; 2026 Germán Burgos. <span data-es="Todos los derechos reservados." data-en="All rights reserved.">Todos los derechos reservados.</span></p>
     </div>
   </footer>
 
   <script src="main.js"></script>
+  <script>
+    const STORAGE_KEY = 'calfuniarki-lang';
+    function setLang(lang) {
+      localStorage.setItem(STORAGE_KEY, lang);
+      document.documentElement.lang = lang;
+      document.querySelectorAll('.lang-btn').forEach(btn => {
+        btn.classList.toggle('active', btn.dataset.lang === lang);
+      });
+      document.querySelectorAll('[data-es][data-en]').forEach(el => {
+        const text = el.dataset[lang];
+        if (text) el.innerHTML = text;
+      });
+    }
+    document.querySelectorAll('.lang-btn').forEach(btn => {
+      btn.addEventListener('click', () => setLang(btn.dataset.lang));
+    });
+    setLang(localStorage.getItem(STORAGE_KEY) || 'es');
+  </script>
 </body>
 </html>
