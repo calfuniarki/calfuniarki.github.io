@@ -6,7 +6,10 @@
       "Bash(git mv *)",
       "Bash(git add *)",
       "Bash(GIT_EDITOR=true git rebase --continue)",
-      "Bash(git -c core.editor=true rebase --continue)"
+      "Bash(git -c core.editor=true rebase --continue)",
+      "Bash(git commit *)",
+      "Bash(git stash *)",
+      "Bash(git push *)"
     ]
   }
 }
