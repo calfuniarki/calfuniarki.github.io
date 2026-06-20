@@ -83,6 +83,15 @@
     /* === BRIDGE AMUTUY === */
     .bridge-amutuy { background: linear-gradient(160deg, rgba(200,164,92,.08), rgba(200,164,92,.03)); border: 1px solid var(--border-h); border-radius: 16px; padding: 2.5rem 2rem; margin: 2rem 0; position: relative; overflow: hidden; }
     .bridge-amutuy::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 2px; background: linear-gradient(90deg, transparent, var(--gold), transparent); }
+
+    /* === EDICIÓN 2026–2027 === */
+    .edicion-2627 { background: linear-gradient(160deg, rgba(200,164,92,.07), rgba(0,0,0,0)); border: 1px solid var(--border-h); border-radius: 20px; overflow: hidden; display: grid; grid-template-columns: 1fr 1fr; gap: 0; align-items: stretch; }
+    .edicion-2627 .e26-img { width: 100%; height: 100%; min-height: 360px; object-fit: cover; display: block; }
+    .edicion-2627 .e26-body { padding: 3rem 2.5rem; display: flex; flex-direction: column; justify-content: center; }
+    .edicion-2627 .e26-body h2 { font-family: var(--serif); font-size: 2rem; color: var(--text-bright); margin: .75rem 0 .35rem; line-height: 1.1; }
+    .edicion-2627 .e26-sub { font-family: var(--serif); font-style: italic; color: var(--gold); font-size: 1rem; margin: 0 0 1.25rem; }
+    .edicion-2627 .e26-text { color: var(--text-dim); line-height: 1.65; margin: 0 0 1.75rem; }
+    @media (max-width: 720px) { .edicion-2627 { grid-template-columns: 1fr; } .edicion-2627 .e26-img { min-height: 280px; } .edicion-2627 .e26-body { padding: 2.25rem 1.75rem; } }
   </style>
 </head>
 <body>
@@ -161,9 +170,9 @@
       <h2 class="section-title reveal" data-es="El año comienza en junio" data-en="The year begins in June">El año comienza en junio</h2>
 
       <p class="reveal"
-         data-es="El Calendario Sur no comienza en enero. Comienza en el <strong style='color:var(--gold)'>Chirpantu</strong> — el año nuevo mapuche —, en el solsticio de invierno del hemisferio sur, entre el 20 y el 24 de junio. Desde ese momento, el año se estructura en <strong style='color:var(--text-bright)'>trece lunas hasta el próximo solsticio</strong>."
-         data-en="The Southern Calendar does not begin in January. It begins at the <strong style='color:var(--gold)'>Chirpantu</strong> — the Mapuche New Year —, at the winter solstice of the southern hemisphere, between June 20 and 24. From that moment, the year unfolds across <strong style='color:var(--text-bright)'>thirteen moons until the next solstice</strong>.">
-        El Calendario Sur no comienza en enero. Comienza en el <strong style="color:var(--gold)">Chirpantu</strong> — el año nuevo mapuche —, en el solsticio de invierno del hemisferio sur, entre el 20 y el 24 de junio. Desde ese momento, el año se estructura en <strong style="color:var(--text-bright)">trece lunas hasta el próximo solsticio</strong>.
+         data-es="El Calendario Sur no comienza en enero. Comienza en el <strong style='color:var(--gold)'>Xipantu</strong> — el año nuevo mapuche —, en el solsticio de invierno del hemisferio sur, entre el 20 y el 24 de junio. Desde ese momento, el año se estructura en <strong style='color:var(--text-bright)'>trece lunas hasta el próximo solsticio</strong>."
+         data-en="The Southern Calendar does not begin in January. It begins at the <strong style='color:var(--gold)'>Xipantu</strong> — the Mapuche New Year —, at the winter solstice of the southern hemisphere, between June 20 and 24. From that moment, the year unfolds across <strong style='color:var(--text-bright)'>thirteen moons until the next solstice</strong>.">
+        El Calendario Sur no comienza en enero. Comienza en el <strong style="color:var(--gold)">Xipantu</strong> — el año nuevo mapuche —, en el solsticio de invierno del hemisferio sur, entre el 20 y el 24 de junio. Desde ese momento, el año se estructura en <strong style="color:var(--text-bright)">trece lunas hasta el próximo solsticio</strong>.
       </p>
 
       <div class="grid-3 mt-2">
@@ -175,7 +184,7 @@
         <div class="feature reveal delay-2">
           <div class="icon">🌀</div>
           <h3 data-es="13 lunas por año" data-en="13 moons per year">13 lunas por año</h3>
-          <p data-es="Desde el Chirpantu hasta el próximo solsticio de invierno. Cíclico, no lineal." data-en="From the Chirpantu to the next winter solstice. Cyclical, not linear.">Desde el Chirpantu hasta el próximo solsticio de invierno. Cíclico, no lineal.</p>
+          <p data-es="Desde el Xipantu hasta el próximo solsticio de invierno. Cíclico, no lineal." data-en="From the Xipantu to the next winter solstice. Cyclical, not linear.">Desde el Xipantu hasta el próximo solsticio de invierno. Cíclico, no lineal.</p>
         </div>
         <div class="feature reveal delay-3">
           <div class="icon">✍️</div>
@@ -445,6 +454,26 @@
         </p>
         <div class="flex-center mt-2">
           <a href="../arte/index.html" class="btn btn-outline" data-es="Explorar AMUTUY →" data-en="Explore AMUTUY →">Explorar AMUTUY →</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECCIÓN 8: EDICIÓN 2026–2027 -->
+  <section class="section">
+    <div class="container">
+      <div class="edicion-2627 reveal">
+        <img class="e26-img" src="img/redes2026.jpg" alt="Calendario Sur 2026–2027" loading="lazy">
+        <div class="e26-body">
+          <p class="section-label" data-es="Edición 2026–2027 · Disponible" data-en="2026–2027 Edition · Available">Edición 2026–2027 · Disponible</p>
+          <h2 data-es="Calendario Sur 2026 — 2027" data-en="Southern Calendar 2026 — 2027">Calendario Sur 2026 — 2027</h2>
+          <p class="e26-sub">Mari küla küyen · Kiñe tripantu · 364 antü</p>
+          <p class="e26-text"
+             data-es="La edición 2026–2027 está disponible en formato digital. Descargá el PDF en alta resolución para imprimir en A3."
+             data-en="The 2026–2027 edition is available in digital format. Download the high-resolution PDF to print in A3.">La edición 2026–2027 está disponible en formato digital. Descargá el PDF en alta resolución para imprimir en A3.</p>
+          <div>
+            <a href="https://calfuniarki.gumroad.com/l/calendar" target="_blank" rel="noopener" class="btn btn-primary" data-es="Obtener el Calendario Sur →" data-en="Get the Southern Calendar →">Obtener el Calendario Sur →</a>
+          </div>
         </div>
       </div>
     </div>
