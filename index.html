@@ -42,6 +42,24 @@
     }
     .lang-btn:hover { opacity: .8; }
     .lang-btn.active { opacity: 1; font-weight: 700; font-style: normal; color: var(--white); }
+
+    /* Obra en curso: ventana a la Cápsula de Espera (archivo.lof.org.ar/capsula) */
+    .en-curso {
+      display: inline-flex; align-items: stretch; margin-top: 2.25rem;
+      text-align: left; color: var(--text-bright); text-decoration: none;
+      background: rgba(10,22,40,.55); border: 1px solid var(--border);
+      transition: border-color .3s var(--ease);
+    }
+    .en-curso::before { content: ""; flex: none; width: 4px; background: #A8231C; }
+    .en-curso:hover, .en-curso:focus-visible { border-color: rgba(168,35,28,.8); }
+    .en-curso:focus-visible { outline: 2px solid #A8231C; outline-offset: 3px; }
+    .en-curso-cuerpo {
+      display: grid; gap: .15rem; padding: .8rem 1.2rem;
+      font-family: ui-monospace, "SF Mono", Menlo, Consolas, "Liberation Mono", monospace;
+    }
+    .en-curso-label { font-size: .78rem; color: var(--text-dim); }
+    .en-curso-titulo { font-size: 1rem; font-weight: 700; }
+    .en-curso-dia { font-size: .85rem; color: var(--text); }
   </style>
 </head>
 <body>
@@ -85,6 +103,13 @@
           <a href="docencia/index.html" data-es="Docencia" data-en="Teaching">Docencia</a>
           <a href="comunidad/index.html" data-es="Comunidad" data-en="Community">Comunidad</a>
         </div>
+        <a class="en-curso reveal delay-4" href="https://archivo.lof.org.ar/capsula/">
+          <span class="en-curso-cuerpo">
+            <span class="en-curso-label" data-es="Obra en curso" data-en="Work in progress">Obra en curso</span>
+            <span class="en-curso-titulo">Cápsula de Espera</span>
+            <span class="en-curso-dia" id="capsula-dia"></span>
+          </span>
+        </a>
       </div>
       <div class="scroll-hint">
         <span data-es="Explorá" data-en="Explore">Explorá</span>
@@ -178,6 +203,21 @@
       btn.addEventListener('click', () => setLang(btn.dataset.lang));
     });
     setLang(localStorage.getItem(STORAGE_KEY) || 'es');
+
+    /* Contador de la Cápsula: días desde que la muestra salió de El Bolsón */
+    (function () {
+      const ENVIO = new Date(2026, 7, 18, 12);   // 18 de agosto de 2026
+      const el = document.getElementById('capsula-dia');
+      if (!el) return;
+      const hoy = new Date(); hoy.setHours(12, 0, 0, 0);
+      const n = Math.max(0, Math.round((hoy - ENVIO) / 86400000));
+      const pintar = () => {
+        const en = document.documentElement.lang === 'en';
+        el.textContent = en ? 'Day ' + n + ' of waiting' : 'Día ' + n + ' de espera';
+      };
+      pintar();
+      document.querySelectorAll('.lang-btn').forEach(b => b.addEventListener('click', pintar));
+    })();
   </script>
 </body>
 </html>
