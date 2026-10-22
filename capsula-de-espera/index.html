@@ -72,16 +72,13 @@
     .media-item figcaption {
       font-size:.8rem; color:#9AA7BA; margin-top:.5rem; font-style:italic;
     }
-    .placeholder {
-      aspect-ratio:9/16; display:flex; flex-direction:column; align-items:center; justify-content:center;
-      gap:.75rem; padding:1.5rem; text-align:center;
-      border:2px dashed var(--gold); border-radius:12px; background:var(--gold-soft);
+    .acta-wide { margin:0 0 2.25rem; max-width:992px }
+    .acta-wide a { display:block }
+    .acta-wide img {
+      width:100%; height:auto; border-radius:12px; border:1px solid var(--border); background:#101312;
     }
-    .placeholder .ph-tag {
-      font-size:.72rem; letter-spacing:2.5px; font-weight:700; color:var(--bg);
-      background:var(--gold); padding:.2rem .6rem; border-radius:4px;
-    }
-    .placeholder p { color:var(--text-bright); font-size:.95rem; margin:0 }
+    .acta-wide figcaption { font-size:.8rem; color:#9AA7BA; margin-top:.5rem; font-style:italic }
+    .acta-wide figcaption a { display:inline; color:var(--gold) }
 
     details.transcript {
       margin-top:.75rem; border:1px solid var(--border); border-radius:10px;
@@ -250,6 +247,15 @@
         </div>
         <p class="station-text reveal">En septiembre de 1911 se inscribió a Orfelina Burgos. El acta nombra a su padre, Manuel Jesús. No nombra a su madre. Dos generaciones después, en la partida de nacimiento de mi papá, falta también el nombre del suyo. Dos silencios, una familia.</p>
 
+        <figure class="acta-wide reveal">
+          <a href="assets/acta_1911_tapada.jpg" target="_blank" rel="noopener"
+             aria-label="Ver el acta de 1911 ampliada (se abre en una pestaña nueva)">
+            <img src="assets/acta_1911_tapada.jpg" width="1600" height="531"
+                 alt="Registro de nacimientos de 1911, con los nombres y los números tapados con recuadros negros; en el campo de la madre hay una anotación manuscrita" loading="lazy">
+          </a>
+          <figcaption>El acta de 1911, con nombres y números tapados. <a href="assets/acta_1911_tapada.jpg" target="_blank" rel="noopener">Ver ampliada</a></figcaption>
+        </figure>
+
         <div class="media-grid reveal">
           <figure class="media-item">
             <img src="assets/est3_arbol_primer_silencio.png" width="1080" height="1920"
@@ -260,15 +266,6 @@
             <img src="assets/est3_arbol_dos_silencios.png" width="1080" height="1920"
                  alt="Árbol genealógico con Orfelina, Manuel Jesús y Leonardo Burgos, y dos círculos punteados vacíos numerados 1 y 2" loading="lazy">
             <figcaption>Imagen · los dos silencios</figcaption>
-          </figure>
-          <!-- PLACEHOLDER: reemplazar este bloque por <img> del acta de 1911 con nombres y números tapados
-               (la imagen la pasa Germán aparte). Definir el texto alternativo cuando llegue. -->
-          <figure class="media-item">
-            <div class="placeholder" role="note" aria-label="Espacio reservado: falta la imagen del acta de 1911">
-              <span class="ph-tag">PLACEHOLDER</span>
-              <p>Aquí va el acta de 1911, con nombres y números tapados</p>
-            </div>
-            <figcaption>Imagen pendiente</figcaption>
           </figure>
         </div>
 
