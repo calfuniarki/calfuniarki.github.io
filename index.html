@@ -42,7 +42,7 @@
     .lang-btn:hover { opacity: .8; }
     .lang-btn.active { opacity: 1; font-weight: 700; font-style: normal; color: var(--white); }
 
-    /* Obra en curso: ventana a la Cápsula de Espera (archivo.lof.org.ar/capsula) */
+    /* Obra en curso: ventana a la Cápsula de Espera (capsula-de-espera/) */
     .en-curso {
       display: inline-flex; align-items: stretch; margin-top: 2.25rem;
       text-align: left; color: var(--text-bright); text-decoration: none;
@@ -106,11 +106,11 @@
           <a href="docencia/index.html" data-es="Docencia" data-en="Teaching">Docencia</a>
           <a href="comunidad/index.html" data-es="Comunidad" data-en="Community">Comunidad</a>
         </div>
-        <a class="en-curso reveal delay-4" href="https://archivo.lof.org.ar/capsula/">
+        <a class="en-curso reveal delay-4" href="capsula-de-espera/index.html">
           <span class="en-curso-cuerpo">
             <span class="en-curso-label" data-es="Obra en curso" data-en="Work in progress">Obra en curso</span>
             <span class="en-curso-titulo">Cápsula de Espera</span>
-            <span class="en-curso-dia" id="capsula-dia"></span>
+            <span class="en-curso-dia" data-es="El informe ya llegó" data-en="The report has arrived">El informe ya llegó</span>
           </span>
         </a>
       </div>
@@ -206,21 +206,6 @@
       btn.addEventListener('click', () => setLang(btn.dataset.lang));
     });
     setLang(localStorage.getItem(STORAGE_KEY) || 'es');
-
-    /* Contador de la Cápsula: días desde que la muestra salió de El Bolsón */
-    (function () {
-      const ENVIO = new Date(2026, 7, 18, 12);   // 18 de agosto de 2026
-      const el = document.getElementById('capsula-dia');
-      if (!el) return;
-      const hoy = new Date(); hoy.setHours(12, 0, 0, 0);
-      const n = Math.max(0, Math.round((hoy - ENVIO) / 86400000));
-      const pintar = () => {
-        const en = document.documentElement.lang === 'en';
-        el.textContent = en ? 'Day ' + n + ' of waiting' : 'Día ' + n + ' de espera';
-      };
-      pintar();
-      document.querySelectorAll('.lang-btn').forEach(b => b.addEventListener('click', pintar));
-    })();
   </script>
 </body>
 </html>
