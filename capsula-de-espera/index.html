@@ -3,19 +3,19 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
-  <title>Cápsula de Espera · El Nütram Anterior — Calfuniarki</title>
-  <meta name="description" content="Cápsula de Espera · El Nütram Anterior: cuatro estaciones sobre un test de ADN, un acta de 1911 y una pregunta abierta. Una obra de Calfuniarki.">
+  <title>Cápsula de Espera — Calfuniarki</title>
+  <meta name="description" content="Mandé mi cuerpo al norte para que un laboratorio me diga de dónde vengo. La espera fue la obra, y el resultado llegó. Un capítulo de AMUTUY, de Calfuniarki.">
   <link rel="canonical" href="https://calfuniarki.com/capsula-de-espera/">
 
   <link rel="icon" type="image/svg+xml" href="../favicon.svg">
 
-  <meta property="og:title" content="Cápsula de Espera · El Nütram Anterior — Calfuniarki">
-  <meta property="og:description" content="Cuatro estaciones sobre un test de ADN, un acta de 1911 y una pregunta abierta.">
+  <meta property="og:title" content="Cápsula de Espera — Calfuniarki">
+  <meta property="og:description" content="Mandé mi cuerpo al norte para que un laboratorio me diga de dónde vengo. La espera fue la obra. Un capítulo de AMUTUY.">
   <meta property="og:url" content="https://calfuniarki.com/capsula-de-espera/">
   <meta property="og:type" content="website">
   <meta property="og:image" content="https://calfuniarki.com/img/og-image.svg">
 
-  <link rel="stylesheet" href="../styles.css">
+  <link rel="stylesheet" href="assets/site-local.css">
 
   <style>
     /* ---------- Cápsula de Espera — estilos propios de la página ---------- */
@@ -32,11 +32,6 @@
       outline:2px solid var(--gold); outline-offset:3px; border-radius:6px;
     }
     main:focus { outline:none }
-
-    /* Introducción */
-    .capsula-intro { padding-top:0 }
-    .capsula-intro .highlight-box { max-width:720px; margin-left:auto; margin-right:auto }
-    .highlight-box p b { font-style:normal; font-weight:700 }
 
     /* Círculo de cuatro estaciones (abstracto: un círculo, dos líneas) */
     .circle-wrap { max-width:360px; margin:0 auto; scroll-margin-top:5rem }
@@ -92,6 +87,54 @@
 
     .fine-print { font-size:.8rem; color:#9AA7BA; max-width:62ch; margin:2.5rem 0 0; line-height:1.6 }
 
+
+    /* ---------- Serie completa: viaje, contrato, interruptor, generaciones ---------- */
+    .serie-nav { display:flex; flex-wrap:wrap; gap:.5rem 1.5rem; margin:1.75rem 0 0; font-size:.9rem }
+    .serie-nav a, .prose a, .fuente a { color:var(--gold); text-decoration:underline; text-underline-offset:.2em }
+    .serie-nav a:hover, .prose a:hover { color:var(--white) }
+    .prose p { font-family:var(--serif); font-size:clamp(1.05rem,2.2vw,1.2rem); line-height:1.85; color:var(--text-bright); max-width:62ch; margin:0 0 1.25rem }
+    .prose p.nota, .nota { font-family:var(--sans); font-size:.88rem; color:#9AA7BA; max-width:62ch; margin:0 0 1rem; line-height:1.6 }
+    .prose p.circle-hint { font-family:var(--sans); font-size:.9rem; color:#9AA7BA; text-align:center; margin:0 0 1rem; line-height:1.6 }
+    .sub-title { font-family:var(--sans); font-weight:600; font-size:1.05rem; color:var(--gold); margin:2.25rem 0 .6rem }
+    .kit-photo { max-width:420px; margin:1.75rem 0 2rem }
+    .kit-photo img { width:100%; height:auto; border-radius:12px; border:1px solid var(--border) }
+    .kit-photo figcaption { font-size:.8rem; color:#9AA7BA; margin-top:.5rem; font-style:italic }
+
+    .mapa { width:100%; max-width:34rem; height:auto; display:block; margin:2rem 0 1rem }
+    .mapa .tierra { fill:rgba(200,164,92,.10); stroke:rgba(200,164,92,.25); stroke-width:1 }
+    .mapa .ruta { fill:none; stroke:var(--gold); stroke-width:4; stroke-linejoin:round; stroke-linecap:round }
+    .mapa .kit { fill:none; stroke:#9AA7BA; stroke-width:1.6; stroke-dasharray:7 8 }
+    .mapa .pt { fill:var(--gold) }
+    .mapa text { font-family:var(--sans); font-size:19px; font-weight:600; fill:var(--text-bright) }
+    .mapa text.f { fill:#9AA7BA; font-size:17px; font-weight:400 }
+    .leyenda { display:grid; gap:.4rem; font-size:.9rem; color:#9AA7BA; margin-bottom:1.5rem }
+    .leyenda span::before { content:""; display:inline-block; width:34px; margin-right:12px; vertical-align:middle; border-top:4px solid var(--gold) }
+    .leyenda span.k::before { border-top:1px dashed #9AA7BA }
+
+    ol.registro { list-style:none; margin:1.25rem 0 0; padding:0; border-left:1px solid var(--border-h); max-width:46rem }
+    ol.registro li { padding:.55rem 0 .55rem 1.1rem; display:grid; grid-template-columns:8.5rem 1fr; gap:.2rem 1rem; line-height:1.5 }
+    ol.registro time { color:#9AA7BA; font-size:.9rem }
+    ol.registro .lugar { font-weight:600; color:var(--text-bright) }
+    ol.registro li.silencio { color:#9AA7BA; font-style:italic }
+    ol.registro li.alerta .ev { color:#F0A8A0 }
+    ol.registro li.lab .ev { text-decoration:underline; text-decoration-color:var(--gold); text-underline-offset:.25em }
+
+    ul.clausulas { list-style:none; margin:1.5rem 0; padding:0; max-width:62ch }
+    ul.clausulas li { padding:1rem 0; border-top:1px solid var(--border); color:var(--text-bright); line-height:1.65 }
+    ul.clausulas li:last-child { border-bottom:1px solid var(--border) }
+    ul.clausulas .fuente, .fuente { display:block; margin-top:.35rem; color:#9AA7BA; font-size:.85rem }
+    mark { background:none; color:var(--white); text-decoration:underline; text-decoration-color:var(--gold); text-decoration-thickness:2px; text-underline-offset:.22em }
+
+    .interruptor { display:flex; align-items:center; gap:1rem; margin:1.6rem 0; padding:1.1rem 1.2rem; background:var(--surface); border:1px solid var(--border); border-radius:12px; max-width:62ch; color:var(--text-bright) }
+    .switch { flex:none; width:58px; height:30px; border-radius:15px; background:var(--gold); position:relative }
+    .switch::after { content:""; position:absolute; top:4px; right:4px; width:22px; height:22px; border-radius:50%; background:var(--bg) }
+
+    @media (max-width:640px) {
+      .mapa text { font-size:30px }
+      .mapa text.f { font-size:26px }
+      ol.registro li { grid-template-columns:1fr }
+    }
+
     /* Respeto de prefers-reduced-motion: sin animaciones ni transiciones */
     @media (prefers-reduced-motion: reduce) {
       html { scroll-behavior:auto }
@@ -127,30 +170,134 @@
   <main id="contenido" tabindex="-1">
     <section class="page-hero">
       <div class="container">
-        <p class="section-label reveal">Cápsula de Espera</p>
-        <h1 class="reveal delay-1">El Nütram Anterior</h1>
-        <p class="tagline reveal delay-2">Cuatro estaciones para una pregunta</p>
+        <p class="section-label reveal">Un capítulo de AMUTUY</p>
+        <h1 class="reveal delay-1">Cápsula de Espera</h1>
+        <p class="tagline reveal delay-2">Mandé mi cuerpo al norte para que un laboratorio me diga de dónde vengo. La espera fue la obra.</p>
+        <nav class="serie-nav reveal delay-2" aria-label="Secciones de la serie">
+          <a href="#viaje">El viaje</a>
+          <a href="#contrato">El contrato</a>
+          <a href="#interruptor">El interruptor</a>
+          <a href="#generaciones">Cinco generaciones</a>
+          <a href="#resultado">El resultado</a>
+        </nav>
       </div>
     </section>
 
-    <section class="section capsula-intro">
-      <div class="container">
-        <div class="reveal">
-          <div class="highlight-box">
-            <p><b>Nütram:</b> palabra mapuche para el relato de lo sucedido, la historia que se transmite de generación en generación.</p>
-          </div>
-        </div>
+    <!-- ===== EL VIAJE ===== -->
+    <section class="section" id="viaje" aria-labelledby="t-viaje">
+      <div class="container prose">
+        <div class="reveal"><h2 class="section-title" id="t-viaje">El viaje</h2></div>
+        <p>El 14 de agosto llegó del norte una caja sellada. Adentro había un hisopo y una promesa: decirme de dónde vengo. Cuatro días después la devolví con mi cuerpo adentro.</p>
+        <p>Durante más de un siglo, cuerpos de esta tierra fueron llevados a museos del norte sin que nadie les preguntara nada. Esta vez el cuerpo viaja solo, con consentimiento firmado y sello de correo.</p>
 
-        <!-- Círculo dividido en cuatro: abstracto, solo un círculo con dos líneas -->
+        <figure class="kit-photo">
+          <img src="assets/est0_kit.jpg" width="720" height="900" loading="lazy"
+               alt="Una mano sostiene frente al volante de un auto una caja sellada de FamilyTreeDNA; por el parabrisas se ve un paisaje de invierno.">
+          <figcaption>14 de agosto de 2026. El kit llegó vacío y sellado.</figcaption>
+        </figure>
+
+        <svg class="mapa" viewBox="0 0 740 880" role="img" aria-labelledby="mapa-t mapa-d">
+          <title id="mapa-t">Mapa del recorrido de la muestra: El Bolsón, Bariloche, Buenos Aires, Miami y Houston. Una línea punteada marca el viaje sin registro del kit vacío.</title>
+          <desc id="mapa-d">Una línea dorada une El Bolsón, Bariloche, Buenos Aires, Miami y Houston, en ese orden. Una línea punteada une Houston con El Bolsón en línea recta. El detalle de cada escala está en el registro, debajo del mapa.</desc>
+<path class="tierra" d="M415,912L406,912L400,909L394,909L384,909L384,886L388,891L392,898L406,904L420,907L415,912ZM420,581L426,588L430,580L442,580L443,582L462,599L470,600L482,608L492,612L494,616L484,631L494,634L505,635L513,634L522,626L524,617L529,615L534,621L534,629L525,635L518,639L507,649L494,662L491,670L489,680L489,690L487,693L486,699L485,704L498,713L496,720L503,724L502,729L493,742L478,747L458,749L447,748L449,754L447,762L449,767L443,770L432,772L423,768L419,771L420,781L427,784L432,780L435,786L426,789L418,795L417,805L414,810L405,810L397,816L394,823L404,830L414,832L410,841L398,847L392,859L383,863L379,867L382,878L389,883L384,883L375,881L351,880L347,874L347,867L340,867L337,864L336,853L344,849L347,842L346,837L351,829L354,816L353,810L358,808L357,804L352,802L355,798L351,794L349,783L353,781L351,768L353,758L356,749L362,746L359,736L359,727L366,720L366,712L372,702L372,693L369,691L365,674L371,663L370,654L373,645L380,635L387,629L384,625L386,622L386,605L397,600L400,590L399,587L407,578L420,581ZM295,122L292,123L290,117L286,114L288,108L291,108L295,117L295,122ZM292,94L281,96L280,92L285,91L292,92L292,94ZM300,94L298,101L296,100L297,95L292,91L300,94ZM179,182L180,180L182,181L185,175L187,176L189,179L187,184L188,185L187,189L186,195L184,197L181,201L178,201L178,190L179,182ZM442,580L430,580L426,588L420,581L407,578L399,587L392,589L388,575L382,564L386,554L380,550L379,543L374,536L380,525L376,517L378,513L377,510L381,505L381,496L381,489L383,486L375,470L382,470L387,470L390,467L398,463L404,459L417,458L416,465L417,469L416,476L427,485L438,486L442,490L449,492L453,495L459,495L465,498L465,504L467,506L467,511L465,511L468,523L488,523L486,529L487,533L493,536L495,542L493,550L491,554L491,560L488,562L488,559L479,554L470,553L452,556L447,565L447,571L443,582L442,580ZM494,662L507,649L518,639L525,635L534,629L534,621L529,615L524,617L526,612L527,606L527,600L523,598L520,600L516,600L515,596L514,587L512,584L505,581L501,583L491,581L491,567L488,562L491,560L491,554L493,550L495,542L493,536L487,533L486,529L488,523L468,523L465,511L467,511L467,506L465,504L465,498L459,495L453,495L449,492L442,490L438,486L427,485L416,476L417,469L416,465L417,458L404,459L398,463L390,467L387,470L382,470L375,470L369,471L365,470L365,455L357,461L348,461L344,455L338,455L340,450L334,444L330,435L333,433L333,429L339,426L338,421L340,417L341,413L353,406L361,404L362,403L371,403L376,376L376,371L374,365L370,362L370,355L375,353L377,354L378,350L372,349L372,343L391,343L395,340L397,343L399,349L401,347L407,353L415,352L416,349L424,347L428,345L429,341L436,338L436,336L427,335L426,329L426,322L422,319L424,319L431,320L439,322L442,320L449,318L460,315L464,311L463,308L468,308L470,310L469,314L472,316L475,320L472,324L470,332L473,338L474,342L480,347L485,347L486,345L489,345L493,343L497,341L502,341L505,341L510,342L511,340L509,338L510,335L514,336L519,335L525,337L529,339L532,336L534,337L536,339L541,339L544,335L548,328L553,318L557,318L559,323L565,341L570,343L571,350L563,358L566,361L584,362L584,372L592,366L604,369L621,376L626,381L624,387L636,384L655,389L670,389L685,397L698,408L705,411L714,411L718,415L721,427L723,433L719,450L714,456L700,470L693,482L686,490L683,491L680,498L681,517L678,532L677,539L674,543L672,556L662,569L661,579L652,584L650,590L639,590L624,594L616,598L605,601L594,609L585,619L584,626L585,632L583,642L581,647L574,652L563,670L554,678L547,682L543,692L536,698L533,692L538,687L532,680L524,675L514,669L510,669L500,661L494,662ZM384,886L384,909L394,909L400,909L397,913L389,916L384,916L378,915L370,912L360,911L347,905L337,900L323,888L332,890L346,897L359,901L364,896L367,889L377,885L384,886ZM388,575L392,589L399,587L400,590L397,600L386,605L386,622L384,625L387,629L380,635L373,645L370,654L371,663L365,674L369,691L372,693L372,702L366,712L366,720L359,727L359,736L362,746L356,749L353,758L351,768L353,781L349,783L351,794L355,798L352,802L357,804L358,808L353,810L354,816L351,829L346,837L347,842L344,849L336,853L337,864L340,867L347,867L347,874L351,880L375,881L384,883L375,883L371,885L362,889L360,898L356,899L344,895L333,888L321,883L317,876L320,870L315,864L314,847L318,837L329,829L314,826L323,818L326,801L338,805L343,784L336,781L333,794L327,792L330,778L333,759L338,753L335,743L334,732L338,731L344,715L351,699L356,684L353,669L356,661L355,649L361,636L363,617L366,596L369,574L368,558L366,543L371,541L374,536L379,543L380,550L386,554L382,564L388,575ZM316,362L312,359L307,356L304,357L296,356L293,352L281,346L280,343L284,342L283,337L286,334L291,333L295,327L299,322L295,319L297,313L295,304L297,302L295,293L291,288L292,283L296,284L298,281L295,275L296,273L302,274L309,267L313,266L313,262L315,254L321,249L327,249L328,247L336,248L344,243L348,240L352,236L356,236L359,239L357,242L350,244L348,249L344,252L341,255L340,263L337,268L342,269L343,274L346,276L346,280L345,284L346,286L348,287L350,290L363,289L369,290L376,299L380,298L387,298L393,297L397,299L395,304L393,308L392,315L394,322L397,325L397,327L392,332L396,334L398,337L401,347L399,349L397,343L395,340L391,343L372,343L372,349L378,350L377,354L375,353L370,355L370,362L374,365L376,371L376,376L371,403L366,398L363,397L370,387L362,383L356,383L352,382L347,384L339,383L333,373L329,370L326,365L319,361L316,362ZM240,278L235,276L233,273L234,272L234,269L231,267L227,265L224,264L223,261L220,259L221,262L219,264L217,262L213,261L212,259L212,256L213,252L211,251L213,249L214,248L221,250L223,249L226,250L228,252L231,253L233,251L236,256L240,260L245,264L241,265L241,269L243,271L241,272L241,276L240,278ZM247,128L256,129L264,129L273,132L277,136L287,135L290,137L299,143L305,148L308,148L314,150L313,153L321,153L328,157L327,159L320,161L314,161L307,160L292,161L299,156L295,153L289,153L285,150L283,144L277,144L268,142L265,140L252,138L248,136L252,134L242,133L235,138L231,138L229,141L225,142L220,141L226,138L228,134L232,132L237,130L245,129L247,128ZM353,163L354,161L362,161L368,164L370,164L372,167L378,167L377,170L382,170L387,174L383,178L378,176L374,176L370,176L369,178L365,178L363,176L360,177L356,184L353,182L353,180L353,177L351,174L353,172L354,168L353,163ZM267,394L272,387L270,382L266,387L260,382L262,380L261,371L264,369L266,363L270,356L269,352L275,350L281,346L291,352L296,356L304,357L307,356L312,359L316,362L318,369L315,376L304,386L292,390L285,399L284,405L278,410L274,405L270,403L266,404L265,401L268,398L267,394ZM458,878L470,872L478,875L484,871L492,876L490,879L476,882L472,878L463,883L458,878ZM169,223L164,221L158,221L153,219L148,215L148,212L149,209L148,207L153,199L165,199L166,196L164,195L163,193L159,191L155,187L160,187L160,182L169,182L179,182L178,190L178,201L181,201L184,203L185,201L188,203L183,207L178,209L178,211L179,213L176,216L174,216L173,219L169,221ZM544,335L541,339L536,339L534,337L532,336L529,339L525,337L527,333L528,328L530,324L526,318L525,311L530,302L534,304L541,306L552,314L553,318L548,328L544,335ZM472,276L479,280L485,287L485,292L489,292L495,297L499,300L497,309L491,312L491,314L490,319L494,327L497,327L498,332L505,341L502,341L497,341L493,343L489,345L486,345L485,347L480,347L474,342L473,338L470,332L472,324L475,320L472,316L469,314L470,310L468,308L463,308L456,300L459,298L458,293L465,291L467,290L464,286L464,282L472,276ZM197,230L195,227L192,226L193,222L191,221L189,220L185,222L182,219L179,217L176,216L179,213L178,211L178,209L183,207L188,203L191,201L194,201L196,202L201,202L206,202L209,201L210,200L213,200L216,201L218,201L220,200L225,201L229,204L232,206L236,207L239,210L235,210L234,211L230,213L228,213L226,214L224,213L222,212L219,214L218,216L215,219L213,220L212,222L209,220L207,222L202,222L203,227L200,230L197,230ZM338,161L344,161L353,163L354,168L353,172L351,174L353,177L353,180L346,178L342,179L335,178L331,180L325,177L326,173L336,175L343,176L347,173L342,169L342,165L336,164L338,161ZM294,175L301,176L306,178L308,181L301,181L298,183L292,181L287,178L288,175L292,175L294,175ZM99,101L95,110L93,117L92,131L91,136L93,141L96,146L98,154L105,161L107,167L111,172L122,174L126,179L135,176L142,175L150,173L156,171L162,167L165,161L165,153L167,150L174,147L185,145L193,145L199,145L202,147L202,152L196,157L194,164L196,165L194,170L192,177L189,175L187,175L182,181L180,180L179,182L169,182L160,182L160,187L155,187L159,191L163,193L164,195L166,196L165,199L153,199L148,207L149,209L148,212L148,215L136,204L131,201L123,198L117,199L109,202L104,203L97,201L90,199L81,194L73,193L62,188L53,184L51,181L45,180L35,177L31,173L20,167L15,161L13,156L16,155L15,152L17,149L17,146L14,141L13,137L10,132L1,122L-9,115L-14,108L-23,104L-24,102L-23,96L-28,93L-34,88L-36,81L-42,81L-48,75L-52,70L-53,67L-58,60L-62,52L-61,48L-69,44L-72,45L-78,42L-79,46L-78,51L-77,58L-73,62L-66,69L-64,72L-63,72L-61,76L-58,82L-55,85L-52,88L-46,93L-43,103L-40,107L-37,112L-37,117L-32,117L-28,122L-24,126L-29,132L-33,126L-39,120L-47,115L-52,113L-51,105L-53,100L-58,97L-65,92L-66,94L-68,91L-75,89L-81,83L-76,83L-72,79L-72,74L-79,67L-85,64L-89,58L-93,52L-97,44L-101,35L-90,34L-77,33L-78,35L-63,40L-40,47L-20,47L-12,47L-12,42L5,42L9,46L14,49L20,54L23,59L25,64L31,67L39,70L45,62L53,62L60,66L65,73L69,79L75,85L77,92L80,96L88,99L95,102L99,101ZM213,249L209,246L205,242L203,239L198,235L193,231L194,229L196,231L200,230L201,227L202,222L205,222L209,220L212,222L213,220L215,219L218,216L219,214L221,212L224,213L226,214L228,213L230,213L234,211L235,210L239,210L237,213L238,217L236,220L235,224L234,229L235,231L235,236L234,237L233,241L233,244L231,246L232,249L233,251L231,253L228,252L226,250L223,249L221,250L214,248L213,249ZM291,288L288,285L286,279L288,277L286,276L284,273L279,270L274,271L272,274L268,277L266,277L265,279L270,285L267,286L266,287L261,288L259,282L258,284L255,283L253,279L249,278L246,277L242,277L241,279L240,278L241,276L242,274L243,271L241,269L241,265L245,264L248,268L248,270L252,270L256,272L261,271L265,269L271,267L274,264L280,264L285,266L289,268L293,271L296,273L295,275L298,281L296,284L292,283L291,288ZM374,536L371,541L366,543L356,538L355,534L336,524L318,513L310,506L306,498L307,495L299,482L289,464L280,444L276,439L272,432L265,425L258,421L261,417L256,407L259,400L267,394L268,398L265,401L266,404L270,403L274,405L278,410L284,405L285,399L292,390L304,386L315,376L318,369L316,362L319,361L326,365L329,370L333,373L339,383L347,384L352,382L356,383L362,383L370,387L363,397L366,398L371,403L362,403L361,404L353,406L341,413L340,417L338,421L339,426L333,429L333,433L330,435L334,444L340,450L338,455L344,455L348,461L357,461L365,455L365,470L369,471L375,470L383,486L381,489L381,496L381,505L377,510L378,513L376,517L380,525L374,536ZM407,175L412,176L414,178L412,180L404,180L398,181L398,176L399,175L407,175ZM443,582L447,571L447,565L452,556L470,553L479,554L488,559L488,562L491,567L491,581L501,583L505,581L512,584L514,587L515,596L516,600L520,600L523,598L527,600L527,606L526,612L524,617L522,626L513,634L505,635L494,634L484,631L494,616L492,612L482,608L470,600L462,599L443,582ZM192,226L191,229L185,228L182,227L177,225L172,225L169,223L173,219L175,218L176,216L179,217L182,219L185,220L189,220L191,221L193,222L192,226ZM499,300L511,302L512,300L520,300L530,302L525,311L526,318L530,324L528,328L527,333L525,337L519,335L514,336L510,335L509,338L511,340L510,342L505,341L498,332L497,327L494,327L490,319L491,314L491,312L497,309L499,300ZM453,252L459,251L461,251L461,259L452,260L450,259L453,256L453,252ZM494,662L500,661L510,669L514,669L524,675L532,680L538,687L533,692L536,698L532,704L521,710L513,708L508,709L499,704L492,705L486,699L487,693L489,690L489,680L491,670L494,662ZM122,-134L124,-128L127,-127L134,-126L144,-125L154,-121L162,-123L174,-120L177,-120L186,-123L196,-119L205,-116L213,-112L221,-109L222,-106L225,-105L227,-104L229,-105L229,-103L231,-101L234,-101L235,-100L234,-98L244,-93L247,-84L249,-76L246,-70L241,-64L239,-61L240,-58L243,-57L246,-57L257,-62L268,-64L281,-69L280,-73L278,-75L283,-76L293,-76L302,-76L305,-80L317,-88L321,-90L337,-90L355,-90L356,-93L359,-93L363,-95L367,-99L370,-107L378,-114L381,-112L388,-114L392,-111L392,-97L399,-91L400,-88L390,-83L379,-80L369,-77L364,-71L362,-69L362,-63L365,-58L369,-58L368,-61L371,-59L370,-56L364,-55L359,-55L351,-53L347,-53L341,-52L333,-49L348,-51L351,-49L337,-46L330,-46L327,-45L330,-44L328,-37L321,-29L320,-32L318,-32L315,-35L317,-30L319,-28L319,-24L316,-20L311,-12L313,-19L308,-23L307,-31L305,-27L307,-21L300,-22L307,-19L307,-10L310,-9L311,-6L313,4L306,12L296,15L289,21L284,21L279,25L278,28L267,35L261,40L257,46L255,53L257,60L260,68L265,75L265,80L269,91L269,98L269,102L266,108L263,109L258,108L257,104L253,101L248,93L243,85L241,81L243,74L241,69L233,61L229,59L219,64L217,63L212,58L206,56L195,57L186,56L178,57L174,58L176,61L176,65L178,67L176,68L172,67L168,69L161,69L154,63L145,64L138,62L132,63L123,65L114,73L104,77L99,82L96,86L96,93L97,98L99,101L95,102L88,99L80,96L77,92L75,85L69,79L65,73L60,66L53,62L45,62L39,70L31,67L25,64L23,59L20,54L14,49L9,46L5,42L-12,42L-12,47L-20,47L-40,47L-63,40L-78,35L-77,33L-90,34L-101,35L-103,30L-109,24L-114,23L-115,20L-121,19L-124,17L-134,16L-136,14L-137,8L-147,-2L-155,-16L-155,-18L-160,-21L-167,-30L-169,-38L-174,-43L-172,-51L-172,-60L-175,-68L-171,-77L-170,-86L-169,-95L-171,-109L-174,-117L-177,-122L-176,-124L-161,-120L-156,-111L-153,-114L-155,-122L-158,-130L-130,-130L-100,-130L-90,-130L-60,-130L-30,-130L-0,-130L30,-130L63,-130L98,-130L118,-130L118,-134L122,-134ZM357,242L356,245L351,246L354,250L354,256L349,261L353,269L357,269L360,261L356,258L356,250L368,246L367,242L371,238L374,245L381,246L388,251L388,254L397,255L408,254L413,258L421,259L427,256L427,254L439,253L451,253L443,256L446,261L454,261L462,266L463,274L468,274L472,276L464,282L464,286L467,290L465,291L458,293L459,298L456,300L463,308L464,311L460,315L449,318L442,320L439,322L431,320L424,319L422,319L426,322L426,329L427,335L436,336L436,338L429,341L428,345L424,347L416,349L415,352L407,353L401,347L398,337L396,334L392,332L397,327L397,325L394,322L392,315L393,308L395,304L397,299L393,297L387,298L380,298L376,299L369,290L363,289L350,290L348,287L346,286L345,284L346,280L346,276L343,274L342,269L337,268L340,263L341,255L344,252L348,249L350,244L357,242Z"/>
+<line class="kit" x1="116.3" y1="62.4" x2="354.7" y2="779.6"/>
+<polyline class="ruta" points="354.7,779.6 356.9,771.3 486.2,706 268.1,102.4 116.3,62.4"/>
+<circle class="pt" cx="354.7" cy="779.6" r="7"/>
+<text x="338.7" y="795.6" text-anchor="end">EL BOLSÓN</text>
+<text class="f" x="338.7" y="795.6" dy="1.25em" text-anchor="end">18.08</text>
+<circle class="pt" cx="356.9" cy="771.3" r="7"/>
+<text x="372.9" y="797.3" text-anchor="start">BARILOCHE</text>
+<text class="f" x="372.9" y="797.3" dy="1.25em" text-anchor="start">19.08</text>
+<circle class="pt" cx="486.2" cy="706" r="7"/>
+<text x="502.2" y="700" text-anchor="start">BUENOS AIRES</text>
+<text class="f" x="502.2" y="700" dy="1.25em" text-anchor="start">24.08</text>
+<circle class="pt" cx="268.1" cy="102.4" r="7"/>
+<text x="284.1" y="96.4" text-anchor="start">MIAMI</text>
+<text class="f" x="284.1" y="96.4" dy="1.25em" text-anchor="start">27.08</text>
+<circle class="pt" cx="116.3" cy="62.4" r="7"/>
+<text x="106.3" y="22.4" text-anchor="start">HOUSTON</text>
+<text class="f" x="106.3" y="22.4" dy="1.25em" text-anchor="start">10.09</text>
+        </svg>
+        <div class="leyenda"><span>la muestra, con registro en cada escala</span><span class="k">el kit vacío, sin registro</span></div>
+
+        <h3 class="sub-title">Registro</h3>
+        <p class="nota">Transcripto de los sistemas de seguimiento del correo argentino, del servicio postal de Estados Unidos y del laboratorio. Horas locales de cada lugar.</p>
+        <ol class="registro">
+          <li class="kit"><time datetime="2026-08-14">14.08</time><span><span class="lugar">El Bolsón</span><br><span class="ev">Llega el kit vacío, sellado</span></span></li>
+          <li><time datetime="2026-08-18T12:36">18.08 12:36</time><span><span class="lugar">El Bolsón</span><br><span class="ev">Ingreso al correo</span></span></li>
+          <li><time datetime="2026-08-18T14:46">18.08 14:46</time><span><span class="lugar">El Bolsón</span><br><span class="ev">En proceso de clasificación</span></span></li>
+          <li><time datetime="2026-08-19T12:48">19.08 12:48</time><span><span class="lugar">Bariloche</span><br><span class="ev">Llegada al centro de procesamiento</span></span></li>
+          <li><time datetime="2026-08-20T18:16">20.08 18:16</time><span><span class="lugar">Bariloche</span><br><span class="ev">En proceso de clasificación</span></span></li>
+          <li><time datetime="2026-08-23T23:16">23.08 23:16</time><span><span class="lugar">Buenos Aires</span><br><span class="ev">Llegada al centro de procesamiento</span></span></li>
+          <li><time datetime="2026-08-24T03:10">24.08 03:10</time><span><span class="lugar">Buenos Aires</span><br><span class="ev">Salida del país</span></span></li>
+          <li class="silencio"><span></span><span>Tres días sin registro.</span></li>
+          <li><time datetime="2026-08-27T16:15">27.08 16:15</time><span><span class="lugar">Miami</span><br><span class="ev">Procesada por el correo de Estados Unidos</span></span></li>
+          <li><time datetime="2026-09-04T12:08">04.09 12:08</time><span><span class="lugar">West Palm Beach</span><br><span class="ev">Llegada a centro de distribución</span></span></li>
+          <li><time datetime="2026-09-06T04:24">06.09 04:24</time><span><span class="lugar">Houston</span><br><span class="ev">Llegada al centro de procesamiento</span></span></li>
+          <li><time datetime="2026-09-08T08:55">08.09 08:55</time><span><span class="lugar">Houston</span><br><span class="ev">Llegada a la oficina de correo</span></span></li>
+          <li><time datetime="2026-09-08T09:06">08.09 09:06</time><span><span class="lugar">Houston</span><br><span class="ev">Salida para entrega</span></span></li>
+          <li class="alerta"><time datetime="2026-09-08T21:00">08.09 21:00</time><span><span class="lugar">Houston</span><br><span class="ev">Alerta: entrega demorada</span></span></li>
+          <li class="lab"><time datetime="2026-09-10">10.09</time><span><span class="lugar">Houston</span><br><span class="ev">El laboratorio recibe la muestra</span></span></li>
+          <li class="lab"><time datetime="2026-09-14">14.09</time><span><span class="lugar">Houston</span><br><span class="ev">Comienza el análisis de datos</span></span></li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- ===== EL CONTRATO ===== -->
+    <section class="section" id="contrato" aria-labelledby="t-contrato">
+      <div class="container prose">
+        <div class="reveal"><h2 class="section-title" id="t-contrato">El contrato</h2></div>
+        <p>Para mandar la muestra acepté los términos del servicio y la declaración de privacidad de la empresa. Casi nadie los lee enteros. Estas son las líneas que más pesan para esta obra, dichas con mis palabras.</p>
+        <ul class="clausulas">
+          <li>Reconocen que mis datos genéticos son míos. En la misma sección les doy permiso para analizarlos con <mark>métodos que todavía no existen</mark>.<span class="fuente">Condiciones del servicio, 20 de mayo de 2025</span></li>
+          <li>No recibo <mark>ninguna compensación</mark> por investigaciones o productos que se desarrollen a partir de mi ADN.<span class="fuente">Condiciones del servicio, 20 de mayo de 2025</span></li>
+          <li>Si lo pido, destruyen la muestra en un plazo de 60 días. Ni los términos ni la declaración de privacidad dicen que <mark>la devuelvan</mark>.<span class="fuente">Condiciones del servicio, 20 de mayo de 2025, y Declaración de privacidad, 24 de junio de 2025</span></li>
+          <li>Mi muestra se guarda, con mi consentimiento, en un laboratorio de Houston, <mark>sin nombre</mark> ni datos que permitan identificarla.<span class="fuente">Declaración de privacidad, 24 de junio de 2025</span></li>
+          <li>Cualquier disputa se rige por <mark>las leyes de Texas</mark> y los juicios se inician en tribunales de Houston. La empresa se reserva el derecho de demandarme en mi país. El arbitraje obligatorio y el plazo de un año para reclamar están escritos para clientes de Estados Unidos.<span class="fuente">Condiciones del servicio, 20 de mayo de 2025</span></li>
+          <li>Mis datos, <mark>agregados y anonimizados</mark>, pueden usarse en investigación científica, histórica y antropológica, y publicarse. Otros usos, como compartirlos con investigadores externos, requieren mi consentimiento explícito.<span class="fuente">Declaración de privacidad, 24 de junio de 2025</span></li>
+          <li>La empresa advierte que la información genética compartida con otras personas <mark>podría usarse en mi contra</mark>.<span class="fuente">Condiciones del servicio, 20 de mayo de 2025</span></li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ===== EL INTERRUPTOR ===== -->
+    <section class="section" id="interruptor" aria-labelledby="t-interruptor">
+      <div class="container prose">
+        <div class="reveal"><h2 class="section-title" id="t-interruptor">El interruptor</h2></div>
+        <p>En la configuración de mi cuenta hay una opción que permite que mi perfil aparezca en búsquedas de fuerzas de seguridad. Según la guía de la empresa, sirve para identificar restos de personas fallecidas o a autores de delitos violentos: homicidios, delitos sexuales, robos a mano armada, agresiones con agravantes. Los términos dicen que hay que optar por participar.</p>
+        <div class="interruptor"><span class="switch" aria-hidden="true"></span><span>Activada.</span></div>
+        <p>Cuando entré a mi cuenta el 22 de septiembre de 2026, la opción estaba activada. Decidí, por ahora, dejarla así.</p>
+        <p>Lo digo acá porque esa decisión no me alcanza solo a mí. El sistema busca por parentesco: a través de mi perfil se puede llegar a parientes que nunca firmaron nada.</p>
+        <p class="nota">Fuentes: Guía para las fuerzas del orden de FamilyTreeDNA, abril de 2024; Condiciones del servicio, 20 de mayo de 2025; Declaración de privacidad, 24 de junio de 2025.</p>
+      </div>
+    </section>
+
+    <!-- ===== CINCO GENERACIONES ===== -->
+    <section class="section" id="generaciones" aria-labelledby="t-generaciones">
+      <div class="container prose">
+        <div class="reveal"><h2 class="section-title" id="t-generaciones">Cinco generaciones</h2></div>
+        <p>El test que hice busca parientes dentro de la base de datos de la empresa. Según la propia empresa, si dos personas que se hicieron el test no coinciden, es improbable que su parentesco esté dentro de las últimas cinco generaciones. Ese es el horizonte de memoria del laboratorio.</p>
+        <p>La memoria de mi familia llega hasta otro lugar, y se cuenta de otra manera. Lo que sigue pone lo que se cuenta frente a lo que se mide.</p>
+        <p class="nota">Fuente: <a href="https://help.familytreedna.com/hc/en-us/articles/4414001961487-Family-Finder-Frequently-Asked-Questions" target="_blank" rel="noopener">Family Finder, preguntas frecuentes (FamilyTreeDNA), en inglés</a>.</p>
+      </div>
+    </section>
+
+    <!-- ===== EL RESULTADO ===== -->
+    <section class="section" id="resultado" aria-labelledby="t-resultado">
+      <div class="container prose">
+        <div class="reveal">
+          <h2 class="section-title" id="t-resultado">El resultado</h2>
+          <p>El informe ya llegó. No reemplaza a las partes anteriores: se pone frente a ellas. Son cuatro estaciones.</p>
+        </div>
         <nav class="circle-wrap mt-3 reveal" id="circulo" aria-label="Las cuatro estaciones">
           <p class="circle-hint">Recorré las estaciones en orden, o elegí una.</p>
           <svg viewBox="0 0 320 320" role="group" aria-labelledby="circ-title" focusable="false">
             <title id="circ-title">Círculo dividido en cuatro estaciones</title>
             <g class="q">
-              <a href="#estacion-1" aria-label="Estación 1: El resultado">
+              <a href="#estacion-1" aria-label="Estación 1: El cariotipo">
                 <path d="M160 160 L160 20 A140 140 0 0 1 300 160 Z"/>
                 <text class="num" x="232" y="94">1</text>
-                <text class="ttl" x="232" y="114">El resultado</text>
+                <text class="ttl" x="232" y="114">El cariotipo</text>
               </a>
               <a href="#estacion-2" aria-label="Estación 2: El mapa">
                 <path d="M160 160 L300 160 A140 140 0 0 1 160 300 Z"/>
@@ -179,7 +326,7 @@
       <div class="container">
         <div class="reveal">
           <p class="section-label">Estación 1 de 4</p>
-          <h2 class="section-title" id="e1-title">El resultado</h2>
+          <h3 class="section-title" id="e1-title">El cariotipo</h3>
         </div>
         <p class="station-text reveal">Pagué un test de ADN para hacerle una pregunta a mi cuerpo. La respuesta vino en colores: veintidós cromosomas, dos copias de cada uno, y en varios, bloques de origen americano. Mi cromosoma Y es europeo, de la rama <span style="white-space:nowrap">I-PF6950</span>. No es un veredicto. Es un mapa con zonas en blanco.</p>
 
@@ -211,7 +358,7 @@
       <div class="container">
         <div class="reveal">
           <p class="section-label">Estación 2 de 4</p>
-          <h2 class="section-title" id="e2-title">El mapa</h2>
+          <h3 class="section-title" id="e2-title">El mapa</h3>
         </div>
         <p class="station-text reveal">Mi papá, Leonardo, nació en Santa Juana, Chile, en 1929. El laboratorio dibuja el resto con pocas referencias del sur de Sudamérica, y por eso muchas zonas quedan sin nombre. Ñuble aparece tenue: son pistas sin confirmar.</p>
 
@@ -243,7 +390,7 @@
       <div class="container">
         <div class="reveal">
           <p class="section-label">Estación 3 de 4</p>
-          <h2 class="section-title" id="e3-title">El acta</h2>
+          <h3 class="section-title" id="e3-title">El acta</h3>
         </div>
         <p class="station-text reveal">En septiembre de 1911 se inscribió a Orfelina Burgos. El acta nombra a su padre, Manuel Jesús. No nombra a su madre. Dos generaciones después, en la partida de nacimiento de mi papá, falta también el nombre del suyo. Dos silencios, una familia.</p>
 
@@ -304,7 +451,7 @@
       <div class="container">
         <div class="reveal">
           <p class="section-label">Estación 4 de 4</p>
-          <h2 class="section-title" id="e4-title">La pregunta abierta</h2>
+          <h3 class="section-title" id="e4-title">La pregunta abierta</h3>
         </div>
         <p class="station-text reveal">No sé si tengo ascendencia mapuche. Los datos no lo dicen ni lo niegan: el laboratorio no usa esa palabra, y eso no quiere decir que no esté. Pasé años consiguiendo un papel que dice 'chileno' para honrar a quienes ya no están, y esta obra es otra manera de hacer ese trámite: pedirle a lo que queda que me diga de dónde vengo.</p>
 
@@ -345,6 +492,7 @@
         <a href="mailto:germaneburgos@gmail.com">germaneburgos@gmail.com</a>
         <a href="https://github.com/calfuniarki" target="_blank" rel="noopener">GitHub</a>
       </div>
+      <p class="credito-serie" style="font-size:.88rem;margin-bottom:.75rem">Un capítulo de <a href="../arte/index.html">AMUTUY</a>, archivo inmersivo decolonial.</p>
       <p class="brand">Calfu<span>niarki</span> · Crear es creer · El Bolsón, Patagonia</p>
       <p class="copy">&copy; 2026 Germán Burgos. Todos los derechos reservados.</p>
     </div>
