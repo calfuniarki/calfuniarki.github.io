@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Cápsula de Espera · El Nütram Anterior — Calfuniarki</title>
+  <meta name="description" content="Cápsula de Espera · El Nütram Anterior: cuatro estaciones sobre un test de ADN, un acta de 1911 y una pregunta abierta. Una obra de Calfuniarki.">
+  <link rel="canonical" href="https://calfuniarki.com/capsula-de-espera/">
+
+  <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+
+  <meta property="og:title" content="Cápsula de Espera · El Nütram Anterior — Calfuniarki">
+  <meta property="og:description" content="Cuatro estaciones sobre un test de ADN, un acta de 1911 y una pregunta abierta.">
+  <meta property="og:url" content="https://calfuniarki.com/capsula-de-espera/">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="https://calfuniarki.com/img/og-image.svg">
+
+  <link rel="stylesheet" href="../styles.css">
+
+  <style>
+    /* ---------- Cápsula de Espera — estilos propios de la página ---------- */
+
+    /* Accesibilidad: salto de contenido y foco visible */
+    .skip-link {
+      position:absolute; left:-9999px; top:0; z-index:300;
+      background:var(--gold); color:var(--bg); font-weight:600;
+      padding:.6rem 1rem; border-radius:0 0 10px 0;
+    }
+    .skip-link:focus { left:0 }
+    a:focus-visible, summary:focus-visible, video:focus-visible,
+    .menu-toggle:focus-visible, .btn:focus-visible {
+      outline:2px solid var(--gold); outline-offset:3px; border-radius:6px;
+    }
+    main:focus { outline:none }
+
+    /* Introducción */
+    .capsula-intro { padding-top:0 }
+    .capsula-intro .highlight-box { max-width:720px; margin-left:auto; margin-right:auto }
+    .highlight-box p b { font-style:normal; font-weight:700 }
+
+    /* Círculo de cuatro estaciones (abstracto: un círculo, dos líneas) */
+    .circle-wrap { max-width:360px; margin:0 auto; scroll-margin-top:5rem }
+    .circle-hint {
+      text-align:center; font-size:.9rem; color:#9AA7BA; margin:0 0 1rem;
+    }
+    .circle-wrap svg { width:100%; height:auto; display:block; overflow:visible }
+    .circle-wrap .q a { outline:none; cursor:pointer }
+    .circle-wrap .q path {
+      fill:transparent; stroke:rgba(200,164,92,.55); stroke-width:1.5;
+      stroke-linejoin:round; transition:fill .3s, stroke .3s;
+    }
+    .circle-wrap .q a:hover path { fill:rgba(200,164,92,.12); stroke:var(--gold) }
+    .circle-wrap .q a:focus-visible path {
+      fill:rgba(200,164,92,.18); stroke:var(--white); stroke-width:3;
+    }
+    .circle-wrap .num { font-family:var(--serif); font-size:30px; font-weight:700; fill:var(--gold); text-anchor:middle }
+    .circle-wrap .ttl { font-family:var(--sans); font-size:12px; font-weight:500; fill:var(--text-bright); text-anchor:middle }
+
+    /* Estaciones */
+    .station { scroll-margin-top:5rem }
+    .station:focus { outline:none }
+    .station-text {
+      font-family:var(--serif); font-size:clamp(1.1rem,2.4vw,1.3rem);
+      line-height:1.85; color:var(--text-bright); max-width:62ch; margin:0 0 2rem;
+    }
+    .media-grid { display:flex; flex-wrap:wrap; gap:1.75rem; margin-top:1.25rem }
+    .media-item { flex:1 1 240px; max-width:320px; margin:0 }
+    .media-item img, .media-item video {
+      width:100%; height:auto; aspect-ratio:9/16; object-fit:contain;
+      border-radius:12px; border:1px solid var(--border); background:#101312;
+    }
+    .media-item figcaption {
+      font-size:.8rem; color:#9AA7BA; margin-top:.5rem; font-style:italic;
+    }
+    .placeholder {
+      aspect-ratio:9/16; display:flex; flex-direction:column; align-items:center; justify-content:center;
+      gap:.75rem; padding:1.5rem; text-align:center;
+      border:2px dashed var(--gold); border-radius:12px; background:var(--gold-soft);
+    }
+    .placeholder .ph-tag {
+      font-size:.72rem; letter-spacing:2.5px; font-weight:700; color:var(--bg);
+      background:var(--gold); padding:.2rem .6rem; border-radius:4px;
+    }
+    .placeholder p { color:var(--text-bright); font-size:.95rem; margin:0 }
+
+    details.transcript {
+      margin-top:.75rem; border:1px solid var(--border); border-radius:10px;
+      background:var(--surface); padding:.6rem .9rem;
+    }
+    details.transcript summary { cursor:pointer; color:var(--gold); font-size:.85rem; font-weight:600 }
+    details.transcript p { color:var(--text); font-size:.9rem; margin:.6rem 0 0; line-height:1.65 }
+
+    .back-top { margin-top:1.75rem; font-size:.85rem }
+    .back-top a { color:var(--gold) }
+
+    .fine-print { font-size:.8rem; color:#9AA7BA; max-width:62ch; margin:2.5rem 0 0; line-height:1.6 }
+
+    /* Respeto de prefers-reduced-motion: sin animaciones ni transiciones */
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior:auto }
+      *, *::before, *::after { animation:none !important; transition:none !important }
+      body.js-ready .reveal, body.js-ready .reveal.visible { opacity:1; transform:none }
+      #particles { display:none }
+    }
+  </style>
+</head>
+<body>
+  <a class="skip-link" href="#contenido">Saltar al contenido</a>
+
+  <canvas id="particles" aria-hidden="true"></canvas>
+  <div class="nav-overlay"></div>
+
+  <header class="site-header">
+    <div class="container">
+      <a href="../index.html" class="logo">Calfu<span>niarki</span></a>
+      <button class="menu-toggle" aria-label="Menú">
+        <span></span><span></span><span></span>
+      </button>
+      <nav class="nav-links" aria-label="Principal">
+        <a href="../arte/index.html">Arte Inmersivo</a>
+        <a href="../calendario-sur/index.html">Calendario Sur</a>
+        <a href="../investigacion/index.html">Investigación</a>
+        <a href="../desarrollos/index.html">Desarrollos</a>
+        <a href="../docencia/index.html">Docencia</a>
+        <a href="../comunidad/index.html">Comunidad</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="contenido" tabindex="-1">
+    <section class="page-hero">
+      <div class="container">
+        <p class="section-label reveal">Cápsula de Espera</p>
+        <h1 class="reveal delay-1">El Nütram Anterior</h1>
+        <p class="tagline reveal delay-2">Cuatro estaciones para una pregunta</p>
+      </div>
+    </section>
+
+    <section class="section capsula-intro">
+      <div class="container">
+        <div class="reveal">
+          <div class="highlight-box">
+            <p><b>Nütram:</b> palabra mapuche para el relato de lo sucedido, la historia que se transmite de generación en generación.</p>
+          </div>
+        </div>
+
+        <!-- Círculo dividido en cuatro: abstracto, solo un círculo con dos líneas -->
+        <nav class="circle-wrap mt-3 reveal" id="circulo" aria-label="Las cuatro estaciones">
+          <p class="circle-hint">Recorré las estaciones en orden, o elegí una.</p>
+          <svg viewBox="0 0 320 320" role="group" aria-labelledby="circ-title" focusable="false">
+            <title id="circ-title">Círculo dividido en cuatro estaciones</title>
+            <g class="q">
+              <a href="#estacion-1" aria-label="Estación 1: El resultado">
+                <path d="M160 160 L160 20 A140 140 0 0 1 300 160 Z"/>
+                <text class="num" x="232" y="94">1</text>
+                <text class="ttl" x="232" y="114">El resultado</text>
+              </a>
+              <a href="#estacion-2" aria-label="Estación 2: El mapa">
+                <path d="M160 160 L300 160 A140 140 0 0 1 160 300 Z"/>
+                <text class="num" x="232" y="230">2</text>
+                <text class="ttl" x="232" y="250">El mapa</text>
+              </a>
+              <a href="#estacion-3" aria-label="Estación 3: El acta">
+                <path d="M160 160 L160 300 A140 140 0 0 1 20 160 Z"/>
+                <text class="num" x="88" y="230">3</text>
+                <text class="ttl" x="88" y="250">El acta</text>
+              </a>
+              <a href="#estacion-4" aria-label="Estación 4: La pregunta abierta">
+                <path d="M160 160 L20 160 A140 140 0 0 1 160 20 Z"/>
+                <text class="num" x="88" y="94">4</text>
+                <text class="ttl" x="88" y="114">La pregunta</text>
+                <text class="ttl" x="88" y="129">abierta</text>
+              </a>
+            </g>
+          </svg>
+        </nav>
+      </div>
+    </section>
+
+    <!-- ===== ESTACIÓN 1 ===== -->
+    <section class="section station" id="estacion-1" aria-labelledby="e1-title" tabindex="-1">
+      <div class="container">
+        <div class="reveal">
+          <p class="section-label">Estación 1 de 4</p>
+          <h2 class="section-title" id="e1-title">El resultado</h2>
+        </div>
+        <p class="station-text reveal">Pagué un test de ADN para hacerle una pregunta a mi cuerpo. La respuesta vino en colores: veintidós cromosomas, dos copias de cada uno, y en varios, bloques de origen americano. Mi cromosoma Y es europeo, de la rama <span style="white-space:nowrap">I-PF6950</span>. No es un veredicto. Es un mapa con zonas en blanco.</p>
+
+        <div class="media-grid reveal">
+          <figure class="media-item">
+            <img src="assets/est1_cariotipo.png" width="1080" height="1920"
+                 alt="22 columnas verticales, los cromosomas, con bloques de colores; los de origen americano, en naranja" loading="lazy">
+            <figcaption>Imagen · el cariotipo</figcaption>
+          </figure>
+          <figure class="media-item">
+            <video controls preload="metadata" playsinline width="1080" height="1920"
+                   aria-label="Video: los cromosomas se llenan de color">
+              <source src="assets/plano5_cariotipo_1080x1920.mp4" type="video/mp4">
+              Tu navegador no puede reproducir este video. <a href="assets/plano5_cariotipo_1080x1920.mp4">Descargalo acá</a>.
+            </video>
+            <figcaption>Video · el cariotipo se llena de color</figcaption>
+            <details class="transcript">
+              <summary>Transcripción del video</summary>
+              <p>Veintidós cromosomas, con dos copias de cada uno, se llenan de color. Los bloques de origen americano se encienden en naranja.</p>
+            </details>
+          </figure>
+        </div>
+        <p class="back-top"><a href="#circulo">↑ Volver al círculo</a></p>
+      </div>
+    </section>
+
+    <!-- ===== ESTACIÓN 2 ===== -->
+    <section class="section station" id="estacion-2" aria-labelledby="e2-title" tabindex="-1">
+      <div class="container">
+        <div class="reveal">
+          <p class="section-label">Estación 2 de 4</p>
+          <h2 class="section-title" id="e2-title">El mapa</h2>
+        </div>
+        <p class="station-text reveal">Mi papá, Leonardo, nació en Santa Juana, Chile, en 1929. El laboratorio dibuja el resto con pocas referencias del sur de Sudamérica, y por eso muchas zonas quedan sin nombre. Ñuble aparece tenue: son pistas sin confirmar.</p>
+
+        <div class="media-grid reveal">
+          <figure class="media-item">
+            <img src="assets/est2_mapa.png" width="1080" height="1920"
+                 alt="Mapa de Chile acercado a Santa Juana, con un punto naranja y un halo suave sobre Ñuble" loading="lazy">
+            <figcaption>Imagen · el mapa</figcaption>
+          </figure>
+          <figure class="media-item">
+            <video controls preload="metadata" playsinline width="1080" height="1920"
+                   aria-label="Video: el mapa se acerca a Santa Juana">
+              <source src="assets/plano7_mapa_1080x1920.mp4" type="video/mp4">
+              Tu navegador no puede reproducir este video. <a href="assets/plano7_mapa_1080x1920.mp4">Descargalo acá</a>.
+            </video>
+            <figcaption>Video · el mapa se acerca a Santa Juana</figcaption>
+            <details class="transcript">
+              <summary>Transcripción del video</summary>
+              <p>Un mapa de Chile que se acerca a Santa Juana, con un punto naranja. Ñuble aparece con un halo tenue, sin confirmar. Un anillo vacío respira junto al punto: el hueco.</p>
+            </details>
+          </figure>
+        </div>
+        <p class="back-top"><a href="#circulo">↑ Volver al círculo</a></p>
+      </div>
+    </section>
+
+    <!-- ===== ESTACIÓN 3 ===== -->
+    <section class="section station" id="estacion-3" aria-labelledby="e3-title" tabindex="-1">
+      <div class="container">
+        <div class="reveal">
+          <p class="section-label">Estación 3 de 4</p>
+          <h2 class="section-title" id="e3-title">El acta</h2>
+        </div>
+        <p class="station-text reveal">En septiembre de 1911 se inscribió a Orfelina Burgos. El acta nombra a su padre, Manuel Jesús. No nombra a su madre. Dos generaciones después, en la partida de nacimiento de mi papá, falta también el nombre del suyo. Dos silencios, una familia.</p>
+
+        <div class="media-grid reveal">
+          <figure class="media-item">
+            <img src="assets/est3_arbol_primer_silencio.png" width="1080" height="1920"
+                 alt="Árbol genealógico con Orfelina y Manuel Jesús Burgos, y un círculo punteado vacío numerado 1" loading="lazy">
+            <figcaption>Imagen · el primer silencio</figcaption>
+          </figure>
+          <figure class="media-item">
+            <img src="assets/est3_arbol_dos_silencios.png" width="1080" height="1920"
+                 alt="Árbol genealógico con Orfelina, Manuel Jesús y Leonardo Burgos, y dos círculos punteados vacíos numerados 1 y 2" loading="lazy">
+            <figcaption>Imagen · los dos silencios</figcaption>
+          </figure>
+          <!-- PLACEHOLDER: reemplazar este bloque por <img> del acta de 1911 con nombres y números tapados
+               (la imagen la pasa Germán aparte). Definir el texto alternativo cuando llegue. -->
+          <figure class="media-item">
+            <div class="placeholder" role="note" aria-label="Espacio reservado: falta la imagen del acta de 1911">
+              <span class="ph-tag">PLACEHOLDER</span>
+              <p>Aquí va el acta de 1911, con nombres y números tapados</p>
+            </div>
+            <figcaption>Imagen pendiente</figcaption>
+          </figure>
+        </div>
+
+        <div class="media-grid reveal">
+          <figure class="media-item">
+            <video controls preload="metadata" playsinline width="1080" height="1920"
+                   aria-label="Video: el primer silencio en el acta de 1911">
+              <source src="assets/arbol_p3.mp4" type="video/mp4">
+              Tu navegador no puede reproducir este video. <a href="assets/arbol_p3.mp4">Descargalo acá</a>.
+            </video>
+            <figcaption>Video · el primer silencio</figcaption>
+            <details class="transcript">
+              <summary>Transcripción del video</summary>
+              <p>Orfelina Burgos, inscrita en 1911. Manuel Jesús Burgos figura como padre. Del otro lado, un círculo vacío, marcado con un 1: sin nombre en el acta.</p>
+            </details>
+          </figure>
+          <figure class="media-item">
+            <video controls preload="metadata" playsinline width="1080" height="1920"
+                   aria-label="Video: el segundo silencio en la partida de nacimiento">
+              <source src="assets/arbol_p4a.mp4" type="video/mp4">
+              Tu navegador no puede reproducir este video. <a href="assets/arbol_p4a.mp4">Descargalo acá</a>.
+            </video>
+            <figcaption>Video · el segundo silencio</figcaption>
+            <details class="transcript">
+              <summary>Transcripción del video</summary>
+              <p>Leonardo Burgos, 1929, hijo de Orfelina. Su otra rama termina en un segundo círculo vacío, marcado con un 2: no figura en su partida. Dos generaciones, dos silencios.</p>
+            </details>
+          </figure>
+        </div>
+        <p class="back-top"><a href="#circulo">↑ Volver al círculo</a></p>
+      </div>
+    </section>
+
+    <!-- ===== ESTACIÓN 4 ===== -->
+    <section class="section station" id="estacion-4" aria-labelledby="e4-title" tabindex="-1">
+      <div class="container">
+        <div class="reveal">
+          <p class="section-label">Estación 4 de 4</p>
+          <h2 class="section-title" id="e4-title">La pregunta abierta</h2>
+        </div>
+        <p class="station-text reveal">No sé si tengo ascendencia mapuche. Los datos no lo dicen ni lo niegan: el laboratorio no usa esa palabra, y eso no quiere decir que no esté. Pasé años consiguiendo un papel que dice 'chileno' para honrar a quienes ya no están, y esta obra es otra manera de hacer ese trámite: pedirle a lo que queda que me diga de dónde vengo.</p>
+
+        <div class="media-grid reveal">
+          <figure class="media-item">
+            <img src="assets/est4_no_dice_no_es.png" width="1080" height="1920"
+                 alt="Las frases 'no dice' y 'no es' separadas por el signo distinto de" loading="lazy">
+            <figcaption>Imagen · no dice ≠ no es</figcaption>
+          </figure>
+          <figure class="media-item">
+            <video controls preload="metadata" playsinline width="1080" height="1920"
+                   aria-label="Video: la palabra mapuche no aparece entre las categorías del laboratorio">
+              <source src="assets/plano6_no_dice_1080x1920.mp4" type="video/mp4">
+              Tu navegador no puede reproducir este video. <a href="assets/plano6_no_dice_1080x1920.mp4">Descargalo acá</a>.
+            </video>
+            <figcaption>Video · no dice, distinto de, no es</figcaption>
+            <details class="transcript">
+              <summary>Transcripción del video</summary>
+              <p>Una lista con las categorías del laboratorio. Un buscador escribe la palabra mapuche y no la encuentra entre ellas. Después, el texto: no dice, distinto de, no es.</p>
+            </details>
+          </figure>
+        </div>
+
+        <p class="fine-print reveal">Este trabajo es una pregunta, no una conclusión. Los datos genéticos tienen límites que el propio laboratorio reconoce.</p>
+
+        <div class="mt-3 reveal flex-center">
+          <a href="../arte/index.html" class="btn btn-outline">← Arte Inmersivo</a>
+          <a href="../index.html" class="btn btn-outline">← Inicio</a>
+        </div>
+        <p class="back-top text-center"><a href="#circulo">↑ Volver al círculo</a></p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-links">
+        <a href="mailto:germaneburgos@gmail.com">germaneburgos@gmail.com</a>
+        <a href="https://github.com/calfuniarki" target="_blank" rel="noopener">GitHub</a>
+      </div>
+      <p class="brand">Calfu<span>niarki</span> · Crear es creer · El Bolsón, Patagonia</p>
+      <p class="copy">&copy; 2026 Germán Burgos. Todos los derechos reservados.</p>
+    </div>
+  </footer>
+
+  <script>
+    /* Con prefers-reduced-motion activo, no se inician las partículas ambientales de main.js */
+    if (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      var pc = document.getElementById('particles');
+      if (pc) pc.remove();
+    }
+  </script>
+  <script src="../main.js"></script>
+</body>
+</html>
